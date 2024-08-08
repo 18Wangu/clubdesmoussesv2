@@ -1,8 +1,10 @@
 import Image from 'next/image';
-import { BoutonContact } from './ui/bouton/bouton_contact';
+import { BoutonContact } from './ui/boutons/bouton_contact';
 import { limelightFont } from './ui/font';
-import { Carousel, CarouselItem } from './component/carousel';
+import { Carousel, CarouselItem } from './components/carousel';
+import Navbar from './ui/navbar/navbar';
 
+// changer les images et toutes les mettre a la meme taille
 const images = [
   "/1.png",
   "/image-caroussel-accueil1.jpg",
@@ -21,7 +23,7 @@ export default function Home() {
           width={150}
           height={150}
         />
-        <h1 className={`${limelightFont.className} text-white text-4xl text-center text-shadow-md`}>
+        <h1 className={`${limelightFont.className} text-white text-4xl text-center text-shadow-acceuil`}>
           Venez passer des vacances inoubliables <br /> au Club des Mousses !
         </h1>
         <BoutonContact />
@@ -42,7 +44,16 @@ export default function Home() {
           </CarouselItem>
         ))}
       </Carousel>
+
+      {/* Navbar */}
+      <Navbar />
+
     </main>
   );
 }
 
+/*
+A faire :
+- Changer la barre horizontale pour scroll (mettre comme sur mon portfolio mais en bleu)
+- Faire une aprem avec Nathan pour le design
+*/
