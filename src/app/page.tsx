@@ -44,10 +44,29 @@ export default function Home() {
           </CarouselItem>
         ))}
       </Carousel>
-
-      {/* Navbar */}
       <Navbar />
+      <div className='bg-slate-500 flex justify-center h-48 w-96'>a faire</div>
 
+      <div className="flex my-16">
+        <Image
+          src="/divider_vague_2.svg"
+          alt="vague divider"
+          width={1050}
+          height={150}
+          className="rotate-180"
+        />
+        {/* animation ici ? */}
+        <h1 className={`${limelightFont.className} px-12 text-[#2F3092] text-3xl text-center whitespace-nowrap`}>Les horaires du Club</h1>
+        <Image
+          src="/divider_vague_2.svg"
+          alt="vague divider"
+          width={1050}
+          height={150}
+          className="rotate-180"
+        />
+      </div>
+
+      <h1 className='text-[#1AC1F3] text-center text-3xl'>DU LUNDI AU SAMEDI</h1>
     </main>
   );
 }
