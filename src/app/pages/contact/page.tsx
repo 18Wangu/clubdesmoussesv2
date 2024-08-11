@@ -6,7 +6,8 @@ export default function Contact() {
     return (
         <div>
             <div className='h-full'>
-                <div className='flex flex-col items-center bg-[#2F3092] w-full h-72 p-8'>
+                <div className='relative flex flex-col items-center bg-[#2F3092] w-full h-72 p-8'>
+                    <Link href='/' className={`${yanoneKaffeesatzFont.className} absolute top-10 left-20 text-white text-xl`}>Accueil</Link>
                     <Image
                         src="/logo_bleu_fonce.png"
                         alt="Logo du Club des Mousses bleu fonce"

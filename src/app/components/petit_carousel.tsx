@@ -13,13 +13,13 @@ export const Carousel = ({ children }: { children: React.ReactNode }) => {
   }, [children]);
 
   return (
-    <div className="relative overflow-hidden w-screen h-80">
+    <div className="relative overflow-hidden w-screen hauteur-debut-page">
       <div
         className="flex transition-transform duration-500"
         style={{ transform: `translateX(-${activeIndex * 100}%)` }}
       >
         {React.Children.map(children, (child, index) => (
-          <div className="w-screen h-80 flex-shrink-0" key={index}>
+          <div className="w-screen hauteur-debut-page flex-shrink-0" key={index}>
             {child}
           </div>
         ))}
