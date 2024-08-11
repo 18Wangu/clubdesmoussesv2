@@ -26,10 +26,10 @@ export default function Home() {
             width={150}
             height={150}
           />
-          <h1 className={`${limelightFont.className} text-white text-4xl text-center text-shadow-acceuil`}>
+          <h1 className={`${limelightFont.className} text-white text-2xl md:text-4xl text-center text-shadow-acceuil`}>
             Venez passer des vacances inoubliables <br /> au Club des Mousses !
           </h1>
-          <Link href='contact' className={`${yanoneKaffeesatzFont.className} text-white text-4xl text-center rounded-club-des-mousses pt-4 pb-3 px-12 max-w-max bg-[#2F3092] hover:bg-[#EE7601] transition duration-300 ease-in-out`}>NOUS CONTACTER</Link>
+          <Link href='/pages/contact' className={`${yanoneKaffeesatzFont.className} text-white text-2xl md:text-4xl text-center rounded-club-des-mousses pt-3 pb-2 px-6 md:pt-4 md:pb-3 md:px-12 max-w-max bg-[#2F3092] hover:bg-[#EE7601] transition duration-300 ease-in-out`}>NOUS CONTACTER</Link>
         </div>
         <Carousel>
           {images.map((src, index) => (
@@ -49,10 +49,10 @@ export default function Home() {
       </div>
 
       {/******************************************* NAVBAR *******************************************/}
-      <Navbar />
+      <Navbar /> {/* Que faire pour la version mobile, j'ai pas d'idee */}
 
       {/******************************************* PHOTOS CLUB *******************************************/}
-      <div className='flex justify-center items-center w-full mt-28 mb-44'>
+      <div className='flex justify-center items-center w-full mt-28 mb-44'> {/* Que faire pour la version mobile, j'ai pas d'idee */}
         <div className='relative group mx-28'>        
           <Image
             src="/dance.JPG"
@@ -141,4 +141,12 @@ A faire :
 - Voir pour les tarifs, comment on affiches les tarifs ?
 - modifier la scrollbar ?
 - renomer les images
+- faire page faq
+- inscription bouton trop cache !
+- faire page "arrive bientot" pour inscription et goodies et histoire du club
+- faire des boutons retour sur chaque page ou alors mettre la navbar sur chaque page ?
+- faire le resonspive
+- rajouter toutes les questions faq (les reformuler et verifier l'hortographe)
+
+J'irai voir l'office du tourisme cette annee pour mettre a jour les informations
 */

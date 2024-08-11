@@ -20,4 +20,7 @@ html, body {
   .right-localisation-club-map {
     right: 187px;
   }
+  .hauteur-debut-page {
+    height: calc(100vh - 288px);
+  }
 }
