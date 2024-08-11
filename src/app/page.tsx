@@ -147,6 +147,8 @@ A faire :
 - faire des boutons retour sur chaque page ou alors mettre la navbar sur chaque page ?
 - faire le resonspive
 - rajouter toutes les questions faq (les reformuler et verifier l'hortographe)
+- peut etre remettre de la video a la place des carousel ? a voir comment optimiser le chargement
+- rendre le site un peu plus dinamique avec des animations
 
 J'irai voir l'office du tourisme cette annee pour mettre a jour les informations
 */

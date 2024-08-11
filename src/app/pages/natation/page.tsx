@@ -3,16 +3,19 @@ import { limelightFont, yanoneKaffeesatzFont } from '@/app/ui/font';
 import Image from 'next/image';
 import Link from 'next/link';
 
+// choisir des images de meilleur qualité
 const images = [
-    "/natation_carousel1.png",
+    "/natation_carousel1.JPG",
     "/natation_carousel2.png"
 ];
 
 export default function Natation() {
     return (
         <div>
+            {/**************************************** carousel aquagym ****************************************/}
             <div>
                 <div className='flex flex-col items-center bg-[#1073BC] w-full h-72 p-8'>
+                <Link href='/' className={`${yanoneKaffeesatzFont.className} absolute top-10 left-20 text-white text-xl`}>Accueil</Link>
                     <Image
                         src="/logo_bleu_intermediaire.png"
                         alt="Logo du Club des Mousses bleu intermadiaire"
@@ -25,20 +28,18 @@ export default function Natation() {
                 <Carousel>
                     {images.map((src, index) => (
                     <CarouselItem key={index}>
-                        {/* changer la hauteur pour que sa prenne toute la hauteur de l'ecran de maniere responsive */}
-                        <div className="relative w-full h-80">
                         <Image
                             src={src}
-                            alt={`Image de l'aquagym`}
+                            alt={`Image de la natation`}
                             layout="fill"
-                            className="absolute"
+                            objectFit='cover'
                         />
-                        </div>
                     </CarouselItem>
                     ))}
                 </Carousel>
             </div>
 
+            {/**************************************** citation ****************************************/}
             <div className='flex justify-around w-full items-center'>
                 <Image
                     src="/nageur_picto.svg"
@@ -55,78 +56,71 @@ export default function Natation() {
                 />
             </div>
 
-            <div className='flex justify-center'>
-                    <div className={`${limelightFont.className} text-white text-4xl text-center rounded-club-des-mousses bg-[#2F3092] py-5 px-12 my-10`}>Deroulement des seances</div>
-            </div>
-
-            <div className='flex'>
-                <Image
-                    src="/divider_vague_2.svg"
-                    alt="vague divider"
-                    width={1050}
-                    height={150}
-                    className="rotate-180"
-                />
-                <h1 className={`${yanoneKaffeesatzFont.className} text-[#1073BC] text-3xl px-12 text-nowrap`}>PREMIERE LIGNE D'EAU</h1>
-                <Image
-                    src="/divider_vague_2.svg"
-                    alt="vague divider"
-                    width={1050}
-                    height={150}
-                    className="rotate-180"
-                />
-            </div>
-            <p className={`${yanoneKaffeesatzFont.className} text-[#2F3092] text-xl text-center my-10`}><strong>Cours particulier</strong> avec le <strong>maître nageur</strong> pendant <strong>10 min</strong></p>
-
-            <div className='flex'>
-                <Image
-                    src="/divider_vague_2.svg"
-                    alt="vague divider"
-                    width={1050}
-                    height={150}
-                    className="rotate-180"
-                />
-                <h1 className={`${yanoneKaffeesatzFont.className} text-[#1073BC] text-3xl px-12 text-nowrap`}>DEUXIEME LIGNE D'EAU</h1>
-                <Image
-                    src="/divider_vague_2.svg"
-                    alt="vague divider"
-                    width={1050}
-                    height={150}
-                    className="rotate-180"
-                />
-            </div>
-            <p className={`${yanoneKaffeesatzFont.className} text-[#2F3092] text-xl text-center my-10`}>Un parent rejoint l’enfant pour <strong>continuer l’apprentissage</strong>. Un ou deux exercices sont donnés pour réaliser des répétitions pendant <strong>10 min</strong></p>
-
-            <div className='flex'>
-                <Image
-                    src="/divider_vague_2.svg"
-                    alt="vague divider"
-                    width={1050}
-                    height={150}
-                    className="rotate-180"
-                />
-                <h1 className={`${yanoneKaffeesatzFont.className} text-[#1073BC] text-3xl px-12 text-nowrap`}>DERNIERE LIGNE D'EAU</h1>
-                <Image
-                    src="/divider_vague_2.svg"
-                    alt="vague divider"
-                    width={1050}
-                    height={150}
-                    className="rotate-180"
-                />
-            </div>
-            <p className={`${yanoneKaffeesatzFont.className} text-[#2F3092] text-xl text-center my-10`}>Si l’enfant à encore de l’énergie, l’apprentissage se prolonge. Ce peut être aussi un temps réservé pour réaliser des <strong>parcours aquatiques</strong> et ainsi favoriser l’adaptation au milieu aquatique</p>
-
-            <h1 className={`${yanoneKaffeesatzFont.className} text-center text-3xl text-[#2F3092] my-14`}>TARIFS</h1>
-            <div className='flex justify-center'>
-                <div className='bg-slate-400 w-80 h-72'>prendre en photos les tarifs ou demander a maman le fichier word</div>
-            </div>
-
-            <h3 className={`${yanoneKaffeesatzFont.className} text-center text-3xl text-[#2F3092] my-14`}>Des Questions ? C'est par ici !</h3>
-            {/* je pense qu il faut faire un justify center general, plus tard clarifier le code */}
-            <div className='flex justify-center'>
-                <div className={`${yanoneKaffeesatzFont.className} rounded-club-des-mousses py-3 px-10 max-w-max bg-[#2F3092] hover:bg-[#EE7601] transition duration-300 ease-in-out text-center text-3xl text-white`}>
-                    <Link href="/faq">FAQ</Link>
+            <div className='flex flex-col items-center mb-14'>
+                <div className={`${limelightFont.className} text-white text-4xl text-center rounded-club-des-mousses bg-[#2F3092] py-5 px-12 mb-12`}>Deroulement des seances</div>
+                {/**************************************** 1ere ligne d'eau ****************************************/}
+                <div className='flex group'>
+                    <Image
+                        src="/divider_vague_2.svg"
+                        alt="vague divider"
+                        width={1050}
+                        height={150}
+                        className="rotate-180 group-hover:-translate-x-10 transition duration-300 ease-in-out"
+                    />
+                    <h1 className={`${yanoneKaffeesatzFont.className} text-[#1073BC] text-3xl text-nowrap px-12`}>PREMIERE LIGNE D'EAU</h1>
+                    <Image
+                        src="/divider_vague_2.svg"
+                        alt="vague divider"
+                        width={1050}
+                        height={150}
+                        className="rotate-180 group-hover:translate-x-10 transition duration-300 ease-in-out"
+                    />
                 </div>
+                <p className={`${yanoneKaffeesatzFont.className} text-[#2F3092] text-center text-xl my-10`}><strong>Cours particulier</strong> avec le <strong>maître nageur</strong> pendant <strong>10 min</strong></p>
+                {/**************************************** 2eme ligne d'eau ****************************************/}
+                <div className='flex group'>
+                    <Image
+                        src="/divider_vague_2.svg"
+                        alt="vague divider"
+                        width={1050}
+                        height={150}
+                        className="rotate-180 group-hover:-translate-x-10 transition duration-300 ease-in-out"
+                    />
+                    <h1 className={`${yanoneKaffeesatzFont.className} text-[#1073BC] text-3xl px-12 text-nowrap`}>DEUXIEME LIGNE D'EAU</h1>
+                    <Image
+                        src="/divider_vague_2.svg"
+                        alt="vague divider"
+                        width={1050}
+                        height={150}
+                        className="rotate-180 group-hover:translate-x-10 transition duration-300 ease-in-out"
+                    />
+                </div>
+                <p className={`${yanoneKaffeesatzFont.className} text-[#2F3092] text-xl text-center my-10`}>Un parent rejoint l’enfant pour <strong>continuer l’apprentissage</strong>. Un ou deux exercices sont donnés pour réaliser des répétitions pendant <strong>10 min</strong></p>
+                {/**************************************** 3eme ligne d'eau ****************************************/}
+                <div className='flex group'>
+                    <Image
+                        src="/divider_vague_2.svg"
+                        alt="vague divider"
+                        width={1050}
+                        height={150}
+                        className="rotate-180 group-hover:-translate-x-10 transition duration-300 ease-in-out"
+                    />
+                    <h1 className={`${yanoneKaffeesatzFont.className} text-[#1073BC] text-3xl px-12 text-nowrap`}>DERNIERE LIGNE D'EAU</h1>
+                    <Image
+                        src="/divider_vague_2.svg"
+                        alt="vague divider"
+                        width={1050}
+                        height={150}
+                        className="rotate-180 group-hover:translate-x-10 transition duration-300 ease-in-out"
+                    />
+                </div>
+                <p className={`${yanoneKaffeesatzFont.className} text-[#2F3092] text-xl text-center my-10`}>Si l’enfant à encore de l’énergie, l’apprentissage se prolonge. Ce peut être aussi un temps réservé pour réaliser des <strong>parcours aquatiques</strong> et ainsi favoriser l’adaptation au milieu aquatique</p>
+                {/**************************************** Tarifs ****************************************/}
+                <h1 className={`${yanoneKaffeesatzFont.className} text-center text-3xl text-[#2F3092] my-14`}>TARIFS</h1>
+                <div className='bg-slate-400 w-80 h-72'>prendre en photos les tarifs ou demander a maman le fichier word</div> {/* ajouter les tarifs */}
+                {/**************************************** Faq ****************************************/}
+                <h3 className={`${yanoneKaffeesatzFont.className} text-center text-3xl text-[#2F3092] mt-20 mb-7`}>Des Questions ? C'est par ici !</h3>
+                <Link href="/faq" className={`${yanoneKaffeesatzFont.className} rounded-club-des-mousses py-3 px-10 max-w-max bg-[#2F3092] hover:bg-[#EE7601] transition duration-300 ease-in-out text-center text-3xl text-white`}>FAQ</Link>
             </div>
         </div>
     );
