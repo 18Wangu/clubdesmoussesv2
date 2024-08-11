@@ -115,9 +115,11 @@ export default function Natation() {
                     />
                 </div>
                 <p className={`${yanoneKaffeesatzFont.className} text-[#2F3092] text-xl text-center my-10`}>Si l’enfant à encore de l’énergie, l’apprentissage se prolonge. Ce peut être aussi un temps réservé pour réaliser des <strong>parcours aquatiques</strong> et ainsi favoriser l’adaptation au milieu aquatique</p>
+                
                 {/**************************************** Tarifs ****************************************/}
                 <h1 className={`${yanoneKaffeesatzFont.className} text-center text-3xl text-[#2F3092] my-14`}>TARIFS</h1>
                 <div className='bg-slate-400 w-80 h-72'>prendre en photos les tarifs ou demander a maman le fichier word</div> {/* ajouter les tarifs */}
+                
                 {/**************************************** Faq ****************************************/}
                 <h3 className={`${yanoneKaffeesatzFont.className} text-center text-3xl text-[#2F3092] mt-20 mb-7`}>Des Questions ? C'est par ici !</h3>
                 <Link href="/faq" className={`${yanoneKaffeesatzFont.className} rounded-club-des-mousses py-3 px-10 max-w-max bg-[#2F3092] hover:bg-[#EE7601] transition duration-300 ease-in-out text-center text-3xl text-white`}>FAQ</Link>

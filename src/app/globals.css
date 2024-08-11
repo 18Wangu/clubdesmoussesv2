@@ -23,4 +23,23 @@ html, body {
   .hauteur-debut-page {
     height: calc(100vh - 288px);
   }
+  .width-explication-journee {
+    width: 600px;
+  }
+  .default-matinee {
+    color: #1073BC;
+    background-color: white;
+  }
+  .default-apres-midi {
+      color: white;
+      background-color: #1073BC;
+  }
+  .hover-matinee:hover {
+      color: white;
+      background-color: #1073BC;
+  }
+  .hover-apres-midi:hover {
+      color: #1073BC;
+      background-color: white;
+  }
 }
