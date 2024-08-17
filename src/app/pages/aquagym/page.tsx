@@ -97,8 +97,8 @@ export default function Aquagym() {
                     />
                     {/* prix a changer ? */}
                     <div className={`${yanoneKaffeesatzFont.className} flex justify-between text-white text-2xl w-72 py-2 px-6 bg-[#1AC1F3] rounded-club-des-mousses mx-24 group-hover:bg-[#1073BC] transition duration-500 ease-in-out`}>
-                        <p>5 seance a la carte</p>
-                        <p>70$</p>
+                        <p>10 seance a la carte</p>
+                        <p>110$</p>
                     </div>
                     <Image
                         src="/divider_vague_2.svg"
