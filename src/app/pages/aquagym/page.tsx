@@ -47,7 +47,7 @@ export default function Aquagym() {
                     width={250}
                     height={250}
                 />
-                <h2 className={`${yanoneKaffeesatzFont.className} text-center text-xl text-[#1073BC]`}>« Prenez du temps pour vous, 45 min d’activité physique <br /> le matin vous donnera du dynamisme, et du bien-être pour toute la journée »</h2>
+                <h2 className={`${yanoneKaffeesatzFont.className} text-center text-xl text-[#1073BC]`}>« Prenez du temps pour vous, 45 min d&apos;activité physique <br /> le matin vous donnera du dynamisme, et du bien-être pour toute la journée »</h2>
                 <Image
                     src="/musique_aquagym.svg"
                     alt="vague divider"
@@ -109,7 +109,7 @@ export default function Aquagym() {
                     />
                 </div>
                 {/**************************************** Faq ****************************************/}
-                <h3 className={`${yanoneKaffeesatzFont.className} text-3xl text-[#2F3092] mt-20 mb-7`}>Des Questions ? C'est par ici !</h3>
+                <h3 className={`${yanoneKaffeesatzFont.className} text-3xl text-[#2F3092] mt-20 mb-7`}>Des Questions ? C&apos;est par ici !</h3>
                 <Link href="/pages/faq" className={`${yanoneKaffeesatzFont.className} rounded-club-des-mousses py-3 px-10 max-w-max bg-[#2F3092] hover:bg-[#EE7601] transition duration-300 ease-in-out text-center text-3xl text-white`}>FAQ</Link>
             </div>
         </div>

@@ -15,7 +15,7 @@ export default function Contact() {
                         height={150}
                     />
                     <h1 className={`${limelightFont.className} text-white text-2xl mt-6 mb-3 text-center md:text-4xl`}>Nous contacter</h1>
-                    <h2 className={`${yanoneKaffeesatzFont.className} text-white text-xl md:text-3xl`}>besoin de plus d'informations ?</h2>
+                    <h2 className={`${yanoneKaffeesatzFont.className} text-white text-xl md:text-3xl`}>besoin de plus d&apos;informations ?</h2>
                 </div>
                 <div className='relative w-full hauteur-debut-page'>
                     <iframe 

@@ -95,7 +95,7 @@ export default function Natation() {
                         className="rotate-180 group-hover:translate-x-10 transition duration-300 ease-in-out"
                     />
                 </div>
-                <p className={`${yanoneKaffeesatzFont.className} text-[#2F3092] text-xl text-center my-10`}>Un parent rejoint l’enfant pour <strong>continuer l’apprentissage</strong>. Un ou deux exercices sont donnés pour réaliser des répétitions pendant <strong>10 min</strong></p>
+                <p className={`${yanoneKaffeesatzFont.className} text-[#2F3092] text-xl text-center my-10`}>Un parent rejoint l&apos;enfant pour <strong>continuer l&apos;apprentissage</strong>. Un ou deux exercices sont donnés pour réaliser des répétitions pendant <strong>10 min</strong></p>
                 {/**************************************** 3eme ligne d'eau ****************************************/}
                 <div className='flex group'>
                     <Image
@@ -114,14 +114,14 @@ export default function Natation() {
                         className="rotate-180 group-hover:translate-x-10 transition duration-300 ease-in-out"
                     />
                 </div>
-                <p className={`${yanoneKaffeesatzFont.className} text-[#2F3092] text-xl text-center my-10`}>Si l’enfant à encore de l’énergie, l’apprentissage se prolonge. Ce peut être aussi un temps réservé pour réaliser des <strong>parcours aquatiques</strong> et ainsi favoriser l’adaptation au milieu aquatique</p>
+                <p className={`${yanoneKaffeesatzFont.className} text-[#2F3092] text-xl text-center my-10`}>Si l&apos;enfant à encore de l&apos;énergie, l&apos;apprentissage se prolonge. Ce peut être aussi un temps réservé pour réaliser des <strong>parcours aquatiques</strong> et ainsi favoriser l&apos;adaptation au milieu aquatique</p>
                 
                 {/**************************************** Tarifs ****************************************/}
                 <h1 className={`${yanoneKaffeesatzFont.className} text-center text-3xl text-[#2F3092] my-14`}>TARIFS</h1>
                 <div className='bg-slate-400 w-80 h-72'>prendre en photos les tarifs ou demander a maman le fichier word</div> {/* ajouter les tarifs */}
                 
                 {/**************************************** Faq ****************************************/}
-                <h3 className={`${yanoneKaffeesatzFont.className} text-center text-3xl text-[#2F3092] mt-20 mb-7`}>Des Questions ? C'est par ici !</h3>
+                <h3 className={`${yanoneKaffeesatzFont.className} text-center text-3xl text-[#2F3092] mt-20 mb-7`}>Des Questions ? C&apos;est par ici !</h3>
                 <Link href="/pages/faq" className={`${yanoneKaffeesatzFont.className} rounded-club-des-mousses py-3 px-10 max-w-max bg-[#2F3092] hover:bg-[#EE7601] transition duration-300 ease-in-out text-center text-3xl text-white`}>FAQ</Link>
             </div>
         </div>

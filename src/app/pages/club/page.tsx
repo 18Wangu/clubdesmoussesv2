@@ -136,13 +136,13 @@ export default function Club() {
                             <h2 className='text-2xl mb-9'>MATINEE</h2>
                             <p>
                                 Les enfants peuvent arriver entre 9h et 10h
-                                À 10h, la trompette sonne, c'est l'heure de la mythique Chanson du Club
+                                À 10h, la trompette sonne, c'est l&apos;heure de la mythique Chanson du Club
                                 <br /><br />
-                                Chaque groupe d'âge évolue avec son moniteur, la matinée se divise en deux parties : 
+                                Chaque groupe d&apos;âge évolue avec son moniteur, la matinée se divise en deux parties : 
                                 <br /><br />
                                 Une première partie sur des parcours de motricité pour les plus petits avec du matériel adapté
                                 Pour les 6-9 ans, nous organisons des courses de relais, des défis, etc
-                                Et pour les 10-14 ans, l'animateur organise du sport (football, handball, tennis de table, volley, bike and run...)
+                                Et pour les 10-14 ans, l&apos;animateur organise du sport (football, handball, tennis de table, volley, bike and run...)
                                 <br /><br />
                                 Dans un deuxième temps, des jeux traditionnels (balles aux prisonniers, tomate ketchup, jeux au bord de l'eau ou jeux dans les bois...)
                                 <br /><br />
@@ -186,7 +186,7 @@ export default function Club() {
                             <div className="relative border-2 border-white rounded-club-des-mousses w-3 h-3 bottom-2 left-52 transition-transform duration-500 ease-out transform translate-y-20 group-hover:-translate-y-1"></div>
                             <div className="relative border-2 border-white rounded-club-des-mousses w-5 h-5 bottom-12 left-56 transition-transform duration-300 ease-out transform translate-y-20 group-hover:-translate-y-1"></div>
                         </div>
-                        <h4 className={`${yanoneKaffeesatzFont.className} text-[#2F3092] text-3xl`}>REMPLISSEZ LE FORMULAIRE D'INSCRIPTION ICI !</h4>
+                        <h4 className={`${yanoneKaffeesatzFont.className} text-[#2F3092] text-3xl`}>REMPLISSEZ LE FORMULAIRE D&apos;INSCRIPTION ICI !</h4>
                     </div>
                     <Image
                         src="/divider_vague3.svg"
@@ -204,7 +204,7 @@ export default function Club() {
                 </div>
 
                 {/**************************************** Faq ****************************************/}
-                <h3 className={`${yanoneKaffeesatzFont.className} text-3xl text-[#2F3092] mt-20 mb-7`}>Des Questions ? C'est par ici !</h3>
+                <h3 className={`${yanoneKaffeesatzFont.className} text-3xl text-[#2F3092] mt-20 mb-7`}>Des Questions ? C&apos;est par ici !</h3>
                 <Link href="/pages/faq" className={`${yanoneKaffeesatzFont.className} rounded-club-des-mousses py-3 px-10 max-w-max bg-[#2F3092] hover:bg-[#EE7601] transition duration-300 ease-in-out text-center text-3xl text-white`}>FAQ</Link>
             </div>
         </div>
