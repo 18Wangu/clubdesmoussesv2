@@ -58,7 +58,7 @@ export default function Club() {
 
             <div className='flex flex-col items-center mb-14'>
                 {/**************************************** groupes d'age ****************************************/}
-                <div className={`${limelightFont.className} text-white text-4xl text-center rounded-club-des-mousses bg-[#2F3092] py-5 px-12 my-10`}>Differents groupes d'age</div>
+                <div className={`${limelightFont.className} text-white text-4xl text-center rounded-club-des-mousses bg-[#2F3092] py-5 px-12 my-10`}>Differents groupes d&apos;age</div>
                     <div className='flex my-16'>
                         <div className='flex flex-col'>
                             {/***************** Genius *****************/}
@@ -92,7 +92,7 @@ export default function Club() {
                                     width={150}
                                     height={150}
                                 />
-                                <h3 className={`${yanoneKaffeesatzFont.className} mx-16 text-[#1AC1F3] text-xl`}>P'tit-Loup</h3>
+                                <h3 className={`${yanoneKaffeesatzFont.className} mx-16 text-[#1AC1F3] text-xl`}>P&apos;tit-Loup</h3>
                                 <h3 className={`${yanoneKaffeesatzFont.className} mx-7 text-[#1AC1F3] text-xl`}>4 ans et demi - 6 ans</h3>
                             </div>
                             {/***************** Winnie *****************/}
@@ -136,7 +136,7 @@ export default function Club() {
                             <h2 className='text-2xl mb-9'>MATINEE</h2>
                             <p>
                                 Les enfants peuvent arriver entre 9h et 10h
-                                À 10h, la trompette sonne, c'est l&apos;heure de la mythique Chanson du Club
+                                À 10h, la trompette sonne, c&apos;est l&apos;heure de la mythique Chanson du Club
                                 <br /><br />
                                 Chaque groupe d&apos;âge évolue avec son moniteur, la matinée se divise en deux parties : 
                                 <br /><br />
@@ -144,7 +144,7 @@ export default function Club() {
                                 Pour les 6-9 ans, nous organisons des courses de relais, des défis, etc
                                 Et pour les 10-14 ans, l&apos;animateur organise du sport (football, handball, tennis de table, volley, bike and run...)
                                 <br /><br />
-                                Dans un deuxième temps, des jeux traditionnels (balles aux prisonniers, tomate ketchup, jeux au bord de l'eau ou jeux dans les bois...)
+                                Dans un deuxième temps, des jeux traditionnels (balles aux prisonniers, tomate ketchup, jeux au bord de l&apos;eau ou jeux dans les bois...)
                                 <br /><br />
                                 La fin de matinée se clôture par le défi du midi
                                 Les parents/grands-parents viennent récupérer les enfants vers 12h30.

@@ -67,7 +67,7 @@ export default function Natation() {
                         height={150}
                         className="rotate-180 group-hover:-translate-x-10 transition duration-300 ease-in-out"
                     />
-                    <h1 className={`${yanoneKaffeesatzFont.className} text-[#1073BC] text-3xl text-nowrap px-12`}>PREMIERE LIGNE D'EAU</h1>
+                    <h1 className={`${yanoneKaffeesatzFont.className} text-[#1073BC] text-3xl text-nowrap px-12`}>PREMIERE LIGNE D&apos;EAU</h1>
                     <Image
                         src="/divider_vague_2.svg"
                         alt="vague divider"
@@ -86,7 +86,7 @@ export default function Natation() {
                         height={150}
                         className="rotate-180 group-hover:-translate-x-10 transition duration-300 ease-in-out"
                     />
-                    <h1 className={`${yanoneKaffeesatzFont.className} text-[#1073BC] text-3xl px-12 text-nowrap`}>DEUXIEME LIGNE D'EAU</h1>
+                    <h1 className={`${yanoneKaffeesatzFont.className} text-[#1073BC] text-3xl px-12 text-nowrap`}>DEUXIEME LIGNE D&apos;EAU</h1>
                     <Image
                         src="/divider_vague_2.svg"
                         alt="vague divider"
@@ -105,7 +105,7 @@ export default function Natation() {
                         height={150}
                         className="rotate-180 group-hover:-translate-x-10 transition duration-300 ease-in-out"
                     />
-                    <h1 className={`${yanoneKaffeesatzFont.className} text-[#1073BC] text-3xl px-12 text-nowrap`}>DERNIERE LIGNE D'EAU</h1>
+                    <h1 className={`${yanoneKaffeesatzFont.className} text-[#1073BC] text-3xl px-12 text-nowrap`}>DERNIERE LIGNE D&apos;EAU</h1>
                     <Image
                         src="/divider_vague_2.svg"
                         alt="vague divider"
