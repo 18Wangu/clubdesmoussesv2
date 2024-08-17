@@ -128,67 +128,84 @@ export default function Club() {
                     </div>
 
                 {/**************************************** description journee ****************************************/}
-                <h1 className={`${limelightFont.className} text-[#2F3092] text-3xl`}>Activites dans la journée</h1>
+                <h1 className={`${limelightFont.className} text-[#2F3092] text-3xl mb-7`}>Activites dans la journée</h1>
                 {/**************************************** matinee ****************************************/}
-                <div className='group'> {/* modifier pour faire un systeme de tracking de la souris, si hover matinee alors text blanc et bg bleu */}
-                    <div className={`${yanoneKaffeesatzFont.className} text-center text-[#1073BC] rounded-club-des-mousses width-explication-journee p-8 group-hover:text-white group-hover:bg-[#1073BC] transform duration-500 ease-in-out`}>
-                        <h2 className='text-2xl mb-9'>MATINEE</h2>
-                        <p>
-                            Les enfants peuvent arriver entre 9h et 10h
-                            À 10h, la trompette sonne, c'est l'heure de la mythique Chanson du Club
-                            <br /><br />
-                            Chaque groupe d'âge évolue avec son moniteur, la matinée se divise en deux parties : 
-                            <br /><br />
-                            Une première partie sur des parcours de motricité pour les plus petits avec du matériel adapté
-                            Pour les 6-9 ans, nous organisons des courses de relais, des défis, etc
-                            Et pour les 10-14 ans, l'animateur organise du sport (football, handball, tennis de table, volley, bike and run...)
-                            <br /><br />
-                            Dans un deuxième temps, des jeux traditionnels (balles aux prisonniers, tomate ketchup, jeux au bord de l'eau ou jeux dans les bois...)
-                            <br /><br />
-                            La fin de matinée se clôture par le défi du midi
-                            Les parents/grands-parents viennent récupérer les enfants vers 12h30.
-                        </p>
-                    </div>
-                    {/**************************************** apres midi ****************************************/}
-                    <div className={`${yanoneKaffeesatzFont.className} text-center text-white bg-[#1073BC] rounded-club-des-mousses width-explication-journee p-8 group-hover:text-[#1073BC] group-hover:bg-white transform duration-500 ease-in-out`}>
-                        <h2 className='text-2xl mb-9'>APRES-MIDI</h2>
-                        <p>
-                            15h à 16h, les enfants peuvent jouer librement sous notre surveillance. Trampoline, football, jeux sur les installations sont proposés
-                            <br /><br />
-                            16h à 17h30, nous organisons un concours différent chaque après-midi de la semaine : concours de châteaux de sable, de précision, athlétique, grands jeux, course en mer, jeux de hasard, spectacle, danse, etc
-                            <br /><br />
-                            À 17h30, un goûter est proposé suivi de jeux libres
-                            <br /><br />
-                            À 18h, tous les soirs, nous organisons une remise de cadeaux
-                            <br /><br />
-                            18h30 à 19h, les enfants peuvent choisir entre une baignade dans la piscine, un entraînement de trampoline ou une rencontre de football.
-                        </p>
+                <div className='card-flip heigth-explication-journee'>
+                    <div className='card-inner relative width-explication-journee'>
+                        <div className={`${yanoneKaffeesatzFont.className} card-front absolute text-center text-[#1073BC] rounded-club-des-mousses width-explication-journee p-8 border-2 border-[#1073BC]`}>
+                            <h2 className='text-2xl mb-9'>MATINEE</h2>
+                            <p>
+                                Les enfants peuvent arriver entre 9h et 10h
+                                À 10h, la trompette sonne, c'est l'heure de la mythique Chanson du Club
+                                <br /><br />
+                                Chaque groupe d'âge évolue avec son moniteur, la matinée se divise en deux parties : 
+                                <br /><br />
+                                Une première partie sur des parcours de motricité pour les plus petits avec du matériel adapté
+                                Pour les 6-9 ans, nous organisons des courses de relais, des défis, etc
+                                Et pour les 10-14 ans, l'animateur organise du sport (football, handball, tennis de table, volley, bike and run...)
+                                <br /><br />
+                                Dans un deuxième temps, des jeux traditionnels (balles aux prisonniers, tomate ketchup, jeux au bord de l'eau ou jeux dans les bois...)
+                                <br /><br />
+                                La fin de matinée se clôture par le défi du midi
+                                Les parents/grands-parents viennent récupérer les enfants vers 12h30.
+                            </p>
+                        </div>
+                        {/**************************************** apres midi ****************************************/}
+                        <div className={`${yanoneKaffeesatzFont.className} card-back absolute text-center text-white bg-[#1073BC] rounded-club-des-mousses width-explication-journee p-8 group-hover:text-[#1073BC] group-hover:bg-white transform duration-500 ease-in-out`}>
+                            <h2 className='text-2xl mb-9'>APRES-MIDI</h2>
+                            <p>
+                                15h à 16h, les enfants peuvent jouer librement sous notre surveillance. Trampoline, football, jeux sur les installations sont proposés
+                                <br /><br />
+                                16h à 17h30, nous organisons un concours différent chaque après-midi de la semaine : concours de châteaux de sable, de précision, athlétique, grands jeux, course en mer, jeux de hasard, spectacle, danse, etc
+                                <br /><br />
+                                À 17h30, un goûter est proposé suivi de jeux libres
+                                <br /><br />
+                                À 18h, tous les soirs, nous organisons une remise de cadeaux
+                                <br /><br />
+                                18h30 à 19h, les enfants peuvent choisir entre une baignade dans la piscine, un entraînement de trampoline ou une rencontre de football.
+                            </p>
+                        </div>
                     </div>
                 </div>
                 
                 {/**************************************** inscription ****************************************/}
-                <Image
-                    src="/divider_vague_2.svg"
-                    alt="vague divider"
-                    width={1050}
-                    height={150}
-                    className="rotate-180"
-                />
-                <div className='flex'>
-                    <Link href='/inscription' className='bg'>INSCRIPTION</Link>
-                    <h4>REMPLISSEZ LE FORMULAIRE D'INSCRIPTION ICI !</h4>
+                <div className=''>
+                    <Image
+                        src="/divider_vague3.svg"
+                        alt="vague divider"
+                        width={800}
+                        height={150}
+                        className="rotate-180"
+                    />
+                    <div className='flex justify-between items-center my-10'>
+                        <div className='group'>
+                            <Link href='/inscription' className={`${yanoneKaffeesatzFont.className} absolute text-white text-2xl md:text-4xl text-center rounded-club-des-mousses pt-3 pb-2 px-12 md:pt-5 md:pb-4 md:px-16 max-w-max bg-[#2F3092] hover:bg-[#EE7601] transition duration-300 ease-in-out`}>INSCRIPTION</Link>
+                            <div className="relative border-2 border-white rounded-club-des-mousses w-7 h-7 top-3 left-3 transition-transform duration-500 ease-out transform translate-y-20 group-hover:-translate-y-1"></div>
+                            <div className="relative border-2 border-white rounded-club-des-mousses w-4 h-4 top-2 left-9 transition-transform duration-300 ease-out transform translate-y-20 group-hover:-translate-y-1"></div>
+                            <div className="relative border-2 border-white rounded-club-des-mousses w-3 h-3 top-2 left-7 transition-transform duration-200 ease-out transform translate-y-20 group-hover:-translate-y-1"></div>
+                            <div className="relative border-2 border-white rounded-club-des-mousses w-3 h-3 bottom-2 left-52 transition-transform duration-500 ease-out transform translate-y-20 group-hover:-translate-y-1"></div>
+                            <div className="relative border-2 border-white rounded-club-des-mousses w-5 h-5 bottom-12 left-56 transition-transform duration-300 ease-out transform translate-y-20 group-hover:-translate-y-1"></div>
+                        </div>
+                        <h4 className={`${yanoneKaffeesatzFont.className} text-[#2F3092] text-3xl`}>REMPLISSEZ LE FORMULAIRE D'INSCRIPTION ICI !</h4>
+                    </div>
+                    <Image
+                        src="/divider_vague3.svg"
+                        alt="vague divider"
+                        width={800}
+                        height={150}
+                        className="rotate-180"
+                    />
                 </div>
-                <Image
-                    src="/divider_vague_2.svg"
-                    alt="vague divider"
-                    width={1050}
-                    height={150}
-                    className="rotate-180"
-                />
 
                 {/**************************************** Tarifs ****************************************/}
-                <h4>TARIFS</h4>
+                <h1 className={`${yanoneKaffeesatzFont.className} text-center text-3xl text-[#2F3092] my-12`}>TARIFS</h1>
+                <div className='w-96 h-72 bg-slate-500'>
+                    tarif ici
+                </div>
 
+                {/**************************************** Faq ****************************************/}
+                <h3 className={`${yanoneKaffeesatzFont.className} text-3xl text-[#2F3092] mt-20 mb-7`}>Des Questions ? C'est par ici !</h3>
+                <Link href="/pages/faq" className={`${yanoneKaffeesatzFont.className} rounded-club-des-mousses py-3 px-10 max-w-max bg-[#2F3092] hover:bg-[#EE7601] transition duration-300 ease-in-out text-center text-3xl text-white`}>FAQ</Link>
             </div>
         </div>
     );
