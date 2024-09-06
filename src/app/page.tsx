@@ -3,6 +3,7 @@ import { limelightFont, yanoneKaffeesatzFont } from './ui/font';
 import { Carousel, CarouselItem } from './components/carousel';
 import Navbar from './ui/navbar/navbar';
 import Link from 'next/link';
+import NavbarMobile from './ui/navbar/navbar-mobile';
 
 // peut etre changer l'image avec l'ancien baby ? la photo vue drone peut etre pas d'assez bonne qualité
 const images = [
@@ -49,11 +50,12 @@ export default function Home() {
       </div>
 
       {/******************************************* NAVBAR *******************************************/}
-      <Navbar /> {/* Que faire pour la version mobile, j'ai pas d'idee */}
-
+      <Navbar />
+      <NavbarMobile />
       {/******************************************* PHOTOS CLUB *******************************************/}
-      <div className='flex justify-center items-center w-full mt-28 mb-44'> {/* Que faire pour la version mobile, j'ai pas d'idee */}
-        <div className='relative group mx-28'>        
+      {/* sur mobile, les images qui s'agrandissent au scroll */}
+      <div className='flex flex-col md:flex-row justify-center items-center w-full mt-28 mb-44'>
+        <div className='relative group mx-20 md:mx-28'>        
           <Image
             src="/dance.JPG"
             alt="dance du club"
@@ -73,6 +75,7 @@ export default function Home() {
       </div>
 
       {/******************************************* HORAIRES CLUB *******************************************/}
+      {/* sur mobile, texte qui monte au scroll comme sur mon site theopremartin.com */}
       <div className="flex mb-9">
         <Image
           src="/divider_vague_2.svg"
@@ -98,7 +101,8 @@ export default function Home() {
       </div>
 
       {/******************************************* MAP SABLEAUX *******************************************/}
-      <div className="relative w-full h-full group">
+      {/* sur mobile, localisation qui apparait au scroll */}
+      <div className="relative w-full h-full group"> {/* changer la hauteur pour que la carte ne bouge pas  */}
         <Image 
           src="/vue_du_ciel_no.jpg"
           alt="plage des dames vue du ciel"
@@ -126,6 +130,7 @@ export default function Home() {
             <span className={`${yanoneKaffeesatzFont.className} absolute top-28 right-16 text-white text-2xl transition-transform duration-300 ease-in-out transform scale-0 group-hover:scale-100`}>Plage des Sableaux</span>
           </div>
         </div>
+        {/* sur mobile, image qui s'ecarte au scroll, comme sur le hover du pc */}
       </div>
     </main>
   );
@@ -148,6 +153,11 @@ A faire :
 - rajouter toutes les questions faq (les reformuler et verifier l'hortographe)
 - peut etre remettre de la video a la place des carousel ? a voir comment optimiser le chargement
 - rendre le site un peu plus dinamique avec des animations
+- penser a des animations pour la version mobile
+- mettre en ligne et tester sur mon tel, celui de celeste, la tablette, les 2 pc pour ajuster les polices et autres tailles images etc
+
+- mettre au propre le code, mettre en ligne le site, regarder sur tout type d'appareil
+- faire le backend de inscription
 
 J'irai voir l'office du tourisme cette annee pour mettre a jour les informations
 */

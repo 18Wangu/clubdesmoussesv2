@@ -1,4 +1,5 @@
 import { limelightFont, yanoneKaffeesatzFont } from '@/app/ui/font';
+import { Footer } from '@/app/ui/footer/footer';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -42,7 +43,7 @@ export default function Contact() {
                 </div>
             </div>
             <h1 className={`${limelightFont.className} text-[#2F3092] text-2xl my-4 text-center`}>Suivez-nous sur les réseaux !</h1>
-            <div className='flex justify-center mb-10'>
+            <div className='flex justify-center mb-48'>
                 <div className='flex justify-center bg-[#2F3092] p-4 rounded-club-des-mousses w-max'>
                     <Link href='https://www.instagram.com/clubdesmousses/'>
                         <Image
@@ -79,6 +80,9 @@ export default function Contact() {
                     />
                 </div>
             </div>
+            
+            {/**************************************** Footer ****************************************/}
+            <Footer />
         </div>
     );
 }

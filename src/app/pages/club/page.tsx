@@ -1,5 +1,6 @@
 import { Carousel, CarouselItem } from '@/app/components/petit_carousel';
 import { limelightFont, yanoneKaffeesatzFont } from '@/app/ui/font';
+import { Footer } from '@/app/ui/footer/footer';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -15,14 +16,14 @@ export default function Club() {
             {/**************************************** carousel club ****************************************/}
             <div>
                 <div className='flex flex-col items-center bg-[#2F3092] w-full h-72 p-8'>
-                <Link href='/' className={`${yanoneKaffeesatzFont.className} absolute top-10 left-20 text-white text-xl`}>Accueil</Link>
+                <Link href='/' className={`${yanoneKaffeesatzFont.className} absolute top-10 left-10 md:left-20 text-white text-xl`}>Accueil</Link>
                     <Image
                         src="/logo_bleu_fonce.png"
                         alt="Logo du Club des Mousses bleu fonce"
                         width={150}
                         height={150}
                     />
-                    <h1 className={`${limelightFont.className} text-white text-4xl mt-6 mb-3`}>Le Club des Mousses</h1>
+                    <h1 className={`${limelightFont.className} text-white text-center text-xl md:text-4xl mt-6 mb-3`}>Le Club des Mousses</h1>
                     <h2 className={`${yanoneKaffeesatzFont.className} text-white text-3xl`}>du lundi au samedi</h2>
                 </div>
                 <Carousel>
@@ -40,14 +41,15 @@ export default function Club() {
             </div>
 
             {/**************************************** citation ****************************************/}
-            <div className='flex justify-around w-full items-center mt-5'>
+            <div className='flex flex-col md:flex-row md:justify-around w-full items-center my-10 md:mt-5'>
                 <Image
                     src="/trompette.svg"
                     alt="nageur"
                     width={250}
                     height={250}
+                    className='hidden md:block'
                 />
-                <h2 className={`${yanoneKaffeesatzFont.className} text-center text-xl text-[#1073BC]`}>« En plus de se défouler toute la journée, le sport et les activités de groupes sont des occasions de lier des amitiés, qui durent parfois toute la vie ! »</h2>
+                <h2 className={`${yanoneKaffeesatzFont.className} text-center text-xl text-[#1073BC] mx-10`}>« En plus de se défouler toute la journée, le sport et les activités de groupes sont des occasions de lier des amitiés, qui durent parfois toute la vie ! »</h2>
                 <Image
                     src="/cabine.svg"
                     alt="drapeau"
@@ -56,10 +58,10 @@ export default function Club() {
                 />
             </div>
 
-            <div className='flex flex-col items-center mb-14'>
+            <div className='flex flex-col items-center'>
                 {/**************************************** groupes d'age ****************************************/}
-                <div className={`${limelightFont.className} text-white text-4xl text-center rounded-club-des-mousses bg-[#2F3092] py-5 px-12 my-10`}>Differents groupes d&apos;age</div>
-                    <div className='flex my-16'>
+                <div className={`${limelightFont.className} text-white text-xl md:text-4xl text-center md:rounded-club-des-mousses bg-[#2F3092] py-5 px-12 my-10`}>Differents groupes d&apos;age</div>
+                    <div className='hidden md:block flex my-16'>
                         <div className='flex flex-col'>
                             {/***************** Genius *****************/}
                             <div className='flex items-center'>
@@ -109,20 +111,34 @@ export default function Club() {
                         </div>
                         
                         {/**************************************** photo club ****************************************/}
-                        <div className='relative group'>{/* penser a une autre facon d'afficher les images */}
+                        <div className='group mt-10'>
                             <Image
-                                src="/dance.JPG"
+                                src="/figurines.JPG"
                                 alt="dance du club"
-                                width={300}
-                                height={300}
-                                className="absolute top-1/2 left-1/2 rounded-3xl transition-transform duration-500 ease-in-out transform origin-bottom-left group-hover:rotate-3 group-hover:translate-x-3 group-hover:translate-y-3 group-hover:scale-110"
+                                width={250}
+                                height={250}
+                                className="z-40 relative rounded-club-des-mousses -rotate-6 border-4 border-white transition-transform duration-500 ease-in-out transform origin-bottom-left group-hover:-rotate-12 group-hover:-translate-x-10 group-hover:-translate-y-10 group-hover:scale-110"
                             />
                             <Image
-                                src="/podium1.JPG"
+                                src="/spectacle.JPG"
                                 alt="podium du club"
-                                width={300}
-                                height={300}
-                                className="rounded-3xl -rotate-12 border-4 border-white transition-transform duration-500 ease-in-out group-hover:-translate-x-6 group-hover:-translate-y-6 group-hover:scale-110"
+                                width={250}
+                                height={250}
+                                className="z-30 relative -top-16 left-1/3 rounded-club-des-mousses rotate-12 border-4 border-white transition-transform duration-500 ease-in-out origin-bottom-left group-hover:translate-x-16 group-hover:-translate-y-2 group-hover:rotate-6 group-hover:scale-110"
+                            />
+                            <Image
+                                src="/anniversaire_club.JPG"
+                                alt="podium du club"
+                                width={250}
+                                height={250}
+                                className="z-20 relative -top-32 rounded-club-des-mousses rotate-6 border-4 border-white transition-transform duration-500 ease-in-out origin-bottom-right group-hover:-translate-x-8 group-hover:translate-y-20 group-hover:-rotate-0 group-hover:scale-110"
+                            />
+                            <Image
+                                src="/podium_theo.JPG"
+                                alt="podium du club"
+                                width={250}
+                                height={250}
+                                className="z-10 relative -top-48 left-1/3 rounded-club-des-mousses -rotate-12 border-4 border-white transition-transform duration-500 ease-in-out group-hover:translate-y-32 group-hover:translate-x-20 group-hover:scale-110"
                             />
                         </div>
                     </div>
@@ -179,7 +195,7 @@ export default function Club() {
                     />
                     <div className='flex justify-between items-center my-10'>
                         <div className='group'>
-                            <Link href='/inscription' className={`${yanoneKaffeesatzFont.className} absolute text-white text-2xl md:text-4xl text-center rounded-club-des-mousses pt-3 pb-2 px-12 md:pt-5 md:pb-4 md:px-16 max-w-max bg-[#2F3092] hover:bg-[#EE7601] transition duration-300 ease-in-out`}>INSCRIPTION</Link>
+                            <Link href='/pages/inscription' className={`${yanoneKaffeesatzFont.className} absolute text-white text-2xl md:text-4xl text-center rounded-club-des-mousses pt-3 pb-2 px-12 md:pt-5 md:pb-4 md:px-16 max-w-max bg-[#2F3092] hover:bg-[#EE7601] transition duration-300 ease-in-out`}>INSCRIPTION</Link>
                             <div className="relative border-2 border-white rounded-club-des-mousses w-7 h-7 top-3 left-3 transition-transform duration-500 ease-out transform translate-y-20 group-hover:-translate-y-1"></div>
                             <div className="relative border-2 border-white rounded-club-des-mousses w-4 h-4 top-2 left-9 transition-transform duration-300 ease-out transform translate-y-20 group-hover:-translate-y-1"></div>
                             <div className="relative border-2 border-white rounded-club-des-mousses w-3 h-3 top-2 left-7 transition-transform duration-200 ease-out transform translate-y-20 group-hover:-translate-y-1"></div>
@@ -197,16 +213,12 @@ export default function Club() {
                     />
                 </div>
 
-                {/**************************************** Tarifs ****************************************/}
-                <h1 className={`${yanoneKaffeesatzFont.className} text-center text-3xl text-[#2F3092] my-12`}>TARIFS</h1>
-                <div className='w-96 h-72 bg-slate-500'>
-                    tarif ici
-                </div>
-
                 {/**************************************** Faq ****************************************/}
                 <h3 className={`${yanoneKaffeesatzFont.className} text-3xl text-[#2F3092] mt-20 mb-7`}>Des Questions ? C&apos;est par ici !</h3>
                 <Link href="/pages/faq" className={`${yanoneKaffeesatzFont.className} rounded-club-des-mousses py-3 px-10 max-w-max bg-[#2F3092] hover:bg-[#EE7601] transition duration-300 ease-in-out text-center text-3xl text-white`}>FAQ</Link>
             </div>
+            {/**************************************** Footer ****************************************/}
+            <Footer />
         </div>
     );
 }

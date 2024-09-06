@@ -1,4 +1,5 @@
 import { yanoneKaffeesatzFont, limelightFont } from '@/app/ui/font';
+import { Footer } from '@/app/ui/footer/footer';
 import Link from 'next/link';
 
 
@@ -9,6 +10,9 @@ export default function FAQ() {
                 <Link href='/' className={`${yanoneKaffeesatzFont.className} absolute top-10 left-20 text-white text-xl`}>Accueil</Link>
                     <h1 className={`${limelightFont.className} text-white text-4xl mt-24`}>Foire aux questions</h1>
                 </div>
+
+            {/**************************************** Footer ****************************************/}
+            <Footer />
         </div>
     );
 }
