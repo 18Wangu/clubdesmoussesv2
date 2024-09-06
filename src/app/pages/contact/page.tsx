@@ -8,7 +8,7 @@ export default function Contact() {
         <div>
             <div className='h-full'>
                 <div className='relative flex flex-col items-center bg-[#2F3092] w-full h-72 p-8'>
-                    <Link href='/' className={`${yanoneKaffeesatzFont.className} absolute top-10 left-20 text-white text-xl`}>Accueil</Link>
+                    <Link href='/' className={`${yanoneKaffeesatzFont.className} absolute top-5 left-5 md:top-10 md:left-20 text-white text-xl`}>Accueil</Link>
                     <Image
                         src="/logo_bleu_fonce.png"
                         alt="Logo du Club des Mousses bleu fonce"
@@ -29,7 +29,7 @@ export default function Contact() {
                 </div>
             </div>
             <div className='flex flex-col lg:flex-row lg:justify-center my-8'>
-                <div className='flex flex-col items-center mx-14 flex-grow'>
+                <div className='flex flex-col items-center mt-10 mx-14 flex-grow'>
                     <div className={`${limelightFont.className} text-white text-2xl md:text-3xl text-center rounded-club-des-mousses pt-3 pb-2 px-6 md:pt-4 md:pb-3 md:px-12 max-w-max bg-[#2F3092]`}>TELEPHONE</div>
                     <p className={`${yanoneKaffeesatzFont.className} text-[#1073BC] text-xl my-4`}>06 75 14 46 52</p>
                 </div>
@@ -43,7 +43,7 @@ export default function Contact() {
                 </div>
             </div>
             <h1 className={`${limelightFont.className} text-[#2F3092] text-2xl my-4 text-center`}>Suivez-nous sur les réseaux !</h1>
-            <div className='flex justify-center mb-48'>
+            <div className='flex justify-center md:mb-48'>
                 <div className='flex justify-center bg-[#2F3092] p-4 rounded-club-des-mousses w-max'>
                     <Link href='https://www.instagram.com/clubdesmousses/'>
                         <Image
