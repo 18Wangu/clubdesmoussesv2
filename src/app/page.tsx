@@ -207,6 +207,7 @@ export default function Home() {
                 className="z-30 md:w-36 absolute top-12 left-44 md:top-16 md:left-48 rotate-[15deg] rounded-3xl border-4 border-white
                 transition-transform duration-500 ease-in-out transform origin-bottom-left md:group-hover:translate-x-8 md:group-hover:-rotate-[-25deg] md:group-hover:scale-110"
               />
+              <Link href='/pages/indisponible' className={`${yanoneKaffeesatzFont.className} z-0 opacity-0 text-[#2F3092] text-3xl text-center absolute top-32 left-28 pl-2 md:group-hover:translate-y-10 md:group-hover:duration-500 ease-in-out md:group-hover:opacity-100 hover:text-[#EE7601]`}>Notre Histoire</Link>
             </div>
             
             {/***************** Notre Boutique *****************/}  
@@ -235,6 +236,7 @@ export default function Home() {
                 className="z-10 md:w-36 absolute top-0 left-52 md:left-60 rotate-[-15deg] rounded-3xl border-4 border-white
                 transition-transform duration-500 ease-in-out transform origin-bottom-left md:group-hover:translate-x-20 md:group-hover:-rotate-[25deg] md:group-hover:scale-110"
               />
+              <Link href='/pages/indisponible' className={`${yanoneKaffeesatzFont.className} z-0 opacity-0 text-[#2F3092] text-3xl text-center absolute top-32 left-28 pl-1 md:group-hover:-translate-y-14 md:group-hover:duration-500 ease-in-out md:group-hover:opacity-100 hover:text-[#EE7601]`}>Notre Boutique</Link>
             </div>
 
             <div className='relative group h-72 w-80'>
@@ -263,6 +265,7 @@ export default function Home() {
                 className="z-30 md:w-36 absolute top-12 left-44 md:top-16 md:left-48 rotate-[15deg] rounded-3xl border-4 border-white
                 transition-transform duration-500 ease-in-out transform origin-bottom-left md:group-hover:translate-x-8 md:group-hover:-rotate-[-25deg] md:group-hover:scale-110"
               />
+              <Link href='/pages/indisponible' className={`${yanoneKaffeesatzFont.className} z-0 opacity-0 text-[#2F3092] text-3xl text-center absolute top-32 left-28 pl-3 md:group-hover:translate-y-10 md:group-hover:duration-500 ease-in-out md:group-hover:opacity-100 hover:text-[#EE7601]`}>Notre Galerie</Link>
             </div>
           </div>
         </div>
@@ -297,6 +300,8 @@ A faire :
 - mettre au propre le code, mettre en ligne le site, regarder sur tout type d'appareil
 - faire le backend de inscription
 - refaire la position des images avec rotate deg pour choisir l'angle exacte
+
+- simplifier ce truc de gogole, l'accordeon pourrait tenir en 3 lignes c'est sur !
 
 J'irai voir l'office du tourisme cette annee pour mettre a jour les informations
 */
