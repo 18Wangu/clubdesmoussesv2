@@ -9,7 +9,7 @@ const Navbar: React.FC = () => {
           <div className={`${yanoneKaffeesatzFont.className} flex bg-[#2F3092] text-white rounded-club-des-mousses py-3 px-6 max-w-max text-3xl`}>
               <Link href="/pages/natation" className="px-12 hover:mr-4 transition-margin duration-300">NATATION</Link> {/* mettre le lien de la page natation */}
               <Image 
-              src="/divider_vague.svg"
+              src="/elements_graphique/divider_vague.svg"
               alt="vague logo"
               width={60}
               height={60}
@@ -17,7 +17,7 @@ const Navbar: React.FC = () => {
               />
               <Link href="/pages/club" className="px-12 hover:mx-4 transition-margin duration-300">CLUB</Link>
               <Image 
-              src="/divider_vague.svg"
+              src="/elements_graphique/divider_vague.svg"
               alt="vague logo"
               width={60}
               height={60}

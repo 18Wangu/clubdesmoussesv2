@@ -13,6 +13,22 @@ html, body {
   scroll-behavior: smooth;
 }
 
+/* scrollbar verticale */
+::-webkit-scrollbar {
+  width: 10px;
+}
+:hover::-webkit-scrollbar-thumb {
+  background-color: #1AC1F3;
+  border-radius: 15px;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #EE7601;
+  border-radius: 15px;
+}
+::-webkit-scrollbar-track {
+  background-color: #2F3092;
+}
+
 @layer utilities {
   .text-shadow-acceuil {
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
@@ -62,6 +78,8 @@ html, body {
     transform: rotateY(180deg);
   }  
 }
+
+/* je pense que je peux supprimer tout ce qui est en dessous ! */
 
 @layer base {
   :root {
