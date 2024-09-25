@@ -76,8 +76,11 @@ html, body {
   }
   .card-back {
     transform: rotateY(180deg);
-  }  
+  }
 }
+
+
+
 
 /* je pense que je peux supprimer tout ce qui est en dessous ! */
 

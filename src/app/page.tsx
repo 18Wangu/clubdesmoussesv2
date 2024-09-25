@@ -1,3 +1,6 @@
+"use client";
+
+import { useEffect, useState } from 'react';
 import Image from 'next/image';
 import { limelightFont, yanoneKaffeesatzFont } from './ui/font';
 import { Carousel, CarouselItem } from './components/carousel';
@@ -21,6 +24,34 @@ const mobileImages = [
 ];
 
 export default function Home() {
+  /*************** animation au scroll mobile ***************/
+  const [isCitationVisible, setIsCitationVisible] = useState(false);
+  const [isHoraireVisible, setIsHoraireVisible] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollY = window.scrollY;
+      console.log(scrollY);
+
+      if (scrollY > 500) {
+        setIsCitationVisible(true);
+      } else {
+        setIsCitationVisible(false);
+      }
+
+      if (scrollY > 700) {
+        setIsHoraireVisible(true);
+      } else {
+        setIsHoraireVisible(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
   return (
     <main>
       {/******************************************* CAROUSEL *******************************************/}
@@ -125,12 +156,11 @@ export default function Home() {
               className="relative -top-20 -left-10 rounded-club-des-mousses -rotate-12 border-4 border-white"
             />
           </div>
-          <h1 className={`${yanoneKaffeesatzFont.className} text-[#2F3092] text-center text-xl w-60 mx-28 my-20`}>Laissez vos enfants en toute confiance et partez vaquer à vos activités préférées.</h1>
+          <h1 className={`${yanoneKaffeesatzFont.className} text-[#2F3092] text-center text-xl w-60 mx-28 my-20 transition-all duration-700 ease-in-out ${isCitationVisible ? 'animate-scroll-up' : 'opacity-0'}`}>Laissez vos enfants en toute confiance et partez vaquer à vos activités préférées.</h1> 
         </div>
       </div>
 
       {/******************************************* HORAIRES CLUB *******************************************/}
-      {/* sur mobile, texte qui monte au scroll comme sur mon site theopremartin.com */}
       <div className="flex justify-center mb-9">
         <Image
           src="/elements_graphique/divider_vague_2.svg"
@@ -139,7 +169,7 @@ export default function Home() {
           height={150}
           className="rotate-180 hidden md:block"
         />
-        <h1 className={`${limelightFont.className} md:px-12 text-[#2F3092] text-2xl md:text-3xl text-center whitespace-nowrap`}>Les horaires du Club</h1>
+        <h1 className={`${limelightFont.className} md:px-12 text-[#2F3092] text-2xl md:text-3xl text-center whitespace-nowrap ${isHoraireVisible ? 'animate-scroll-up' : 'opacity-0'}`}>Les horaires du Club</h1>
         <Image
           src="/elements_graphique/divider_vague_2.svg"
           alt="vague divider"
@@ -148,9 +178,8 @@ export default function Home() {
           className="rotate-180 hidden md:block"
         />
       </div>
-      {/* changement de couleur au scroll pour la version mobile */}
-      <h2 className={`${yanoneKaffeesatzFont.className} text-[#1AC1F3] text-center text-2xl md:text-3xl`}>DU LUNDI AU SAMEDI</h2>
-      <div className={`${yanoneKaffeesatzFont.className} flex text-center justify-center text-xl md:text-2xl mt-7 mb-12 group`}>
+      <h2 className={`${yanoneKaffeesatzFont.className} text-[#1AC1F3] text-center text-2xl md:text-3xl ${isHoraireVisible ? 'animate-scroll-up' : 'opacity-0'}`}>DU LUNDI AU SAMEDI</h2>
+      <div className={`${yanoneKaffeesatzFont.className} flex text-center justify-center text-xl md:text-2xl mt-7 mb-12 group ${isHoraireVisible ? 'animate-scroll-up' : 'opacity-0'}`}>
         <h3 className='md:mx-32 text-[#1073BC] group-hover:text-[#EE7601] transition duration-300 ease-in-out'>Matinee <br /> 9h-12h30</h3>
         <h3 className='mx-10 md:mx-32 text-[#1AC1F3] group-hover:text-[#2F3092] transition duration-300 ease-in-out'>Pause Midi <br /> 12h30-15h</h3>
         <h3 className='md:mx-32 text-[#1073BC] group-hover:text-[#EE7601] transition duration-300 ease-in-out'>Après-midi <br /> 15h-19h</h3>
