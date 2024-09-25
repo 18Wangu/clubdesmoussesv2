@@ -25,8 +25,14 @@ const mobileImages = [
 
 export default function Home() {
   /*************** animation au scroll mobile ***************/
-  const [isCitationVisible, setIsCitationVisible] = useState(false);
+  const [isImageEtCitationVisible, setIsImageEtCitationVisible] = useState(false);
   const [isHoraireVisible, setIsHoraireVisible] = useState(false);
+  const [isMapVisible, setIsMapVisible] = useState(false);
+  const [isUnPeuPlusVisible, setIsUnPeuPlusVisible] = useState(false);
+  const [isCitationFinVisible, setIsCitationFinVisible] = useState(false);
+  const [isImg1Visible, setIsImg1Visible] = useState(false);
+  const [isImg2Visible, setIsImg2Visible] = useState(false);
+  const [isImg3Visible, setIsImg3Visible] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -34,15 +40,44 @@ export default function Home() {
       console.log(scrollY);
 
       if (scrollY > 500) {
-        setIsCitationVisible(true);
+        setIsImageEtCitationVisible(true);
       } else {
-        setIsCitationVisible(false);
+        setIsImageEtCitationVisible(false);
       }
-
       if (scrollY > 700) {
         setIsHoraireVisible(true);
       } else {
         setIsHoraireVisible(false);
+      }
+      if (scrollY > 1400) {
+        setIsMapVisible(true);
+      } else {
+        setIsMapVisible(false);
+      }
+      if (scrollY > 1500) {
+        setIsUnPeuPlusVisible(true);
+      } else {
+        setIsUnPeuPlusVisible(false);
+      }
+      if (scrollY > 1900) {
+        setIsImg1Visible(true);
+      } else {
+        setIsImg1Visible(false);
+      }
+      if (scrollY > 2200) {
+        setIsImg2Visible(true);
+      } else {
+        setIsImg2Visible(false);
+      }
+      if (scrollY > 2400) {
+        setIsImg3Visible(true);
+      } else {
+        setIsImg3Visible(false);
+      }
+      if (scrollY > 2600) {
+        setIsCitationFinVisible(true);
+      } else {
+        setIsCitationFinVisible(false);
       }
     };
 
@@ -137,7 +172,6 @@ export default function Home() {
       </div>
 
       {/******************************************* PHOTOS CLUB mobile *******************************************/}
-      {/* sur mobile, les images qui s'agrandissent au scroll */}
       <div className='block md:hidden'>
         <div className='flex flex-col justify-center items-center w-full my-16'>
           <div className='group'>        
@@ -146,17 +180,17 @@ export default function Home() {
               alt="dance du club"
               width={200}
               height={200}
-              className="relative top-32 left-10 rounded-club-des-mousses"
+              className={`relative top-32 left-8 rounded-club-des-mousses transition-transform duration-500 ease-in-out transform origin-bottom-left ${isImageEtCitationVisible ? 'rotate-3 translate-y-3 scale-110' : 'translate(0, 0)'}`}
             />
             <Image
               src="/accueil/ordinateur/diplome_natation.JPG"
               alt="podium du club"
               width={180}
               height={200}
-              className="relative -top-20 -left-10 rounded-club-des-mousses -rotate-12 border-4 border-white"
+              className={`relative -top-20 -left-10 rounded-club-des-mousses -rotate-12 border-4 border-white transition-transform duration-500 ease-in-out ${isImageEtCitationVisible ? '-translate-x-2 -translate-y-6 scale-110' : 'translate(0, 0)'}`}
             />
           </div>
-          <h1 className={`${yanoneKaffeesatzFont.className} text-[#2F3092] text-center text-xl w-60 mx-28 my-20 transition-all duration-700 ease-in-out ${isCitationVisible ? 'animate-scroll-up' : 'opacity-0'}`}>Laissez vos enfants en toute confiance et partez vaquer à vos activités préférées.</h1> 
+          <h1 className={`${yanoneKaffeesatzFont.className} text-[#2F3092] text-center text-xl w-60 mx-28 my-20 transition-all duration-700 ease-in-out ${isImageEtCitationVisible ? 'animate-scroll-up' : 'opacity-0'}`}>Laissez vos enfants en toute confiance et partez vaquer à vos activités préférées.</h1> 
         </div>
       </div>
 
@@ -226,10 +260,11 @@ export default function Home() {
               alt="carte Noirmoutier"
               width={250}
               height={250}
+              className={`transition-transform duration-300 ease-in-out transform ${isMapVisible ? 'scale-110' : 'scale-100'}`}
             />
           </div>
-          <span className='absolute top-12 left-40 bg-[#EE7601] rounded-club-des-mousses p-2 h-2'></span>
-          <span className={`${yanoneKaffeesatzFont.className} absolute top-16 left-44 text-[#EE7601] text-xl`}>Plage des Sableaux</span>
+          <span className={`absolute top-12 left-40 bg-[#EE7601] rounded-club-des-mousses p-2 h-2 transition-transform duration-300 ease-in-out transform ${isMapVisible ? 'scale-125' : 'scale-100'}`}></span>
+          <span className={`${yanoneKaffeesatzFont.className} absolute top-16 left-44 text-[#EE7601] text-xl transition-transform duration-300 ease-in-out transform ${isMapVisible ? 'scale-105' : 'scale-100'}`}>Plage des Sableaux</span>
         </div>
       </div>
 
@@ -331,92 +366,106 @@ export default function Home() {
       {/******************************************* Un peu plus sur nous MOBILE *******************************************/}
       <div className='block md:hidden'>
         <div>
-          <h1 className={`${yanoneKaffeesatzFont.className} text-[#2F3092] text-2xl text-center my-28`}>Un peu plus sur nous !</h1>
+          <h1 className={`${yanoneKaffeesatzFont.className} text-[#2F3092] text-2xl text-center my-28 ${isUnPeuPlusVisible ? 'animate-scroll-up' : 'opacity-0'}`}>Un peu plus sur nous !</h1>
           <div className='flex flex-col items-center'>
             <div className='relative group h-60 w-80'>
-              {/* au scroll texte qui arrive de bas en haut pour venir au milieu, en meme temps les carte s'ecarte */}
               {/***************** Notre Histoire *****************/}
-              <Image
-                src="/accueil/notre_histoire1.JPG"
-                alt="dance du club"
-                width={110}
-                height={100}
-                className="z-10 absolute top-5 left-7 rotate-[-15deg] rounded-3xl border-4 border-white"
-              />
-              <Image
-                src="/accueil/notre_histoire2.JPG"
-                alt="dance du club"
-                width={110}
-                height={100}
-                className="z-20 absolute -top-6 left-28 rounded-3xl border-4 border-white"
-              />
-              <Image
-                src="/accueil/notre_histoire3.JPG"
-                alt="dance du club"
-                width={110}
-                height={100}
-                className="z-30 absolute top-5 left-44 rotate-[15deg] rounded-3xl border-4 border-white"
-              />
-              <Link href='/pages/indisponible' className={`${yanoneKaffeesatzFont.className} z-0 opacity-0 text-[#2F3092] text-3xl text-center absolute top-32 left-28 pl-2`}>Notre Histoire</Link>
+              <Link href='/pages/indisponible'>
+                <Image
+                  src="/accueil/notre_histoire1.JPG"
+                  alt="dance du club"
+                  width={110}
+                  height={100}
+                  className={`z-10 absolute top-1 left-10 rotate-[-15deg] rounded-3xl border-4 border-white
+                  transition-transform duration-500 ease-in-out transform origin-bottom-right ${isImg1Visible ? '-translate-x -translate-y-5 -rotate-[20deg] scale-110' : 'translate(0, 0)'}`}
+                />
+                <Image
+                  src="/accueil/notre_histoire2.JPG"
+                  alt="dance du club"
+                  width={110}
+                  height={100}
+                  className={`z-20 absolute -top-6 left-28 rounded-3xl border-4 border-white
+                  transition-transform duration-500 ease-in-out transform origin-bottom ${isImg1Visible ? '-translate-y-4 scale-110' : 'translate(0, 0)'}`}
+                />
+                <Image
+                  src="/accueil/notre_histoire3.JPG"
+                  alt="dance du club"
+                  width={110}
+                  height={100}
+                  className={`z-30 absolute top-4 left-44 rotate-[15deg] rounded-3xl border-4 border-white
+                  transition-transform duration-500 ease-in-out transform origin-bottom-left ${isImg1Visible ? 'translate-x -translate-y-10 -rotate-[-25deg] scale-110' : 'translate(0, 0)'}`}
+                />
+                <h1 className={`${yanoneKaffeesatzFont.className} text-[#EE7601] text-3xl absolute top-44 left-24 transition-transform duration-500 ease-out transform ${isImg1Visible ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-20'}`}>Notre Histoire</h1>
+              </Link>
             </div>
             
-            {/***************** Notre Boutique *****************/}  
-            <div className='relative group h-60 w-80'>  
-              <Image
-                src="/accueil/boutique1.jpg"
-                alt="dance du club"
-                width={110}
-                height={100}
-                className="z-10 absolute top-0 left-6 rotate-[15deg] rounded-3xl border-4 border-white"
-              />
-              <Image
-                src="/accueil/boutique2.jpg"
-                alt="dance du club"
-                width={110}
-                height={100}
-                className="z-20 absolute top-10 left-28 rounded-3xl border-4 border-white"
-              />
-              <Image
-                src="/accueil/boutique3.jpg"
-                alt="dance du club"
-                width={110}
-                height={100}
-                className="z-10 absolute top-0 left-48 rotate-[-15deg] rounded-3xl border-4 border-white"
-              />
-              <Link href='/pages/indisponible' className={`${yanoneKaffeesatzFont.className} z-0 opacity-0 text-[#2F3092] text-3xl text-center absolute top-32 left-28 pl-1`}>Notre Boutique</Link>
-            </div>
+            {/***************** Notre Boutique *****************/}
+            <Link href='/pages/indisponible'>
+              <div className='relative group h-60 w-80 my-10'>  
+                <Image
+                  src="/accueil/boutique1.jpg"
+                  alt="dance du club"
+                  width={110}
+                  height={100}
+                  className={`z-10 absolute top-0 left-6 rotate-[15deg] rounded-3xl border-4 border-white
+                  transition-transform duration-500 ease-in-out transform origin-bottom-right ${isImg2Visible ? '-translate-x-10 -rotate-[-25deg] scale-110' : 'translate(0, 0)'}`}
+                />
+                <Image
+                  src="/accueil/boutique2.jpg"
+                  alt="dance du club"
+                  width={110}
+                  height={100}
+                  className={`z-20 absolute top-10 left-28 rounded-3xl border-4 border-white
+                  transition-transform duration-500 ease-in-out transform origin-top ${isImg2Visible ? 'scale-110 -translate-y-5' : 'translate(0, 0)'}`}
+                />
+                <Image
+                  src="/accueil/boutique3.jpg"
+                  alt="dance du club"
+                  width={110}
+                  height={100}
+                  className={`z-10 absolute top-0 left-48 rotate-[-15deg] rounded-3xl border-4 border-white
+                  transition-transform duration-500 ease-in-out transform origin-bottom-left ${isImg2Visible ? 'translate-x-12 -rotate-[25deg] scale-110' : 'translate(0, 0)'}`}
+                />
+                <h1 className={`${yanoneKaffeesatzFont.className} text-[#2F3092] text-3xl absolute top-48 left-24 transition-transform duration-500 ease-out transform ${isImg2Visible ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-20'}`}>Notre Boutique</h1>
+              </div>
+            </Link>
 
-            <div className='relative group h-72 w-80'>
-              {/***************** Notre Galerie *****************/}
-              <Image
-                src="/accueil/galerie1.JPG"
-                alt="dance du club"
-                width={110}
-                height={100}
-                className="z-10 absolute top-10 left-8 rotate-[-15deg] rounded-3xl border-4 border-white"
-              />
-              <Image
-                src="/accueil/galerie2.JPG"
-                alt="dance du club"
-                width={110}
-                height={100}
-                className="z-20 absolute top-0 left-28 rounded-3xl border-4 border-white"
-              />
-              <Image
-                src="/accueil/galerie3.JPG"
-                alt="dance du club"
-                width={110}
-                height={100}
-                className="z-30 absolute top-10 left-44 rotate-[15deg] rounded-3xl border-4 border-white"
-              />
-              <Link href='/pages/indisponible' className={`${yanoneKaffeesatzFont.className} z-0 opacity-0 text-[#2F3092] text-3xl text-center absolute top-32 left-28 pl-3`}>Notre Galerie</Link>
-            </div>
+            {/***************** Notre Galerie *****************/}
+            <Link href='/pages/indisponible'>
+              <div className='relative group h-72 w-80'>
+                <Image
+                  src="/accueil/galerie1.JPG"
+                  alt="dance du club"
+                  width={110}
+                  height={100}
+                  className={`z-10 absolute top-10 left-8 rotate-[-15deg] rounded-3xl border-4 border-white
+                  transition-transform duration-500 ease-in-out transform origin-bottom-right ${isImg3Visible ? '-translate-x -rotate-[25deg] scale-110' : 'translate(0, 0)'}`}
+                />
+                <Image
+                  src="/accueil/galerie2.JPG"
+                  alt="dance du club"
+                  width={110}
+                  height={100}
+                  className={`z-20 absolute top-0 left-28 rounded-3xl border-4 border-white
+                  transition-transform duration-500 ease-in-out transform origin-bottom ${isImg3Visible ? '-translate-y-2 scale-110' : 'translate(0, 0)'}`}
+                />
+                <Image
+                  src="/accueil/galerie3.JPG"
+                  alt="dance du club"
+                  width={110}
+                  height={100}
+                  className={`z-30 absolute top-8 left-44 rotate-[15deg] rounded-3xl border-4 border-white
+                  transition-transform duration-500 ease-in-out transform origin-bottom-left ${isImg3Visible ? 'translate-x-2 -rotate-[-25deg] scale-110' : 'translate(0, 0)'}`}
+                />
+                <h1 className={`${yanoneKaffeesatzFont.className} text-[#EE7601] text-3xl absolute top-52 left-24 transition-transform duration-500 ease-out transform ${isImg3Visible ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-20'}`}>Notre Galerie</h1>
+              </div>
+            </Link>
           </div>
         </div>
       </div>
 
       {/******************************************* Citation mobile *******************************************/}
-      <p className={`${yanoneKaffeesatzFont.className} block md:hidden px-6 text-center text-[#2F3092] text-xl`}>Situé à Noirmoutier-en-l&apos;île, le club prend vie sur la plage des Sableaux, une plage surveillée agréable, vivante et familiale, où se retrouvent de nombreux habitués de générations en générations !</p>
+      <p className={`${yanoneKaffeesatzFont.className} block md:hidden px-6 text-center text-[#2F3092] text-xl mt-10 ${isCitationFinVisible ? 'animate-scroll-up' : 'opacity-0'}`}>Situé à Noirmoutier-en-l&apos;île, le club prend vie sur la plage des Sableaux, une plage surveillée agréable, vivante et familiale, où se retrouvent de nombreux habitués de générations en générations !</p>
       <Footer />
     </main>
   );
