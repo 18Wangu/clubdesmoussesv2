@@ -22,7 +22,7 @@ export default function Aquagym() {
                 <div className='flex flex-col items-center bg-[#1AC1F3] w-full h-72 p-8'>
                 <Link href='/' className={`${yanoneKaffeesatzFont.className} absolute top-5 left-5 md:top-10 md:left-20 text-white text-xl`}>Accueil</Link>
                     <Image
-                        src="/logo_bleu_clair.png"
+                        src="/elements_graphique/logo_bleu_clair.png"
                         alt="Logo du Club des Mousses bleu clair"
                         width={150}
                         height={150}

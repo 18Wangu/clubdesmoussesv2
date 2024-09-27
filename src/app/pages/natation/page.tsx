@@ -148,12 +148,12 @@ export default function Natation() {
 
     return (
         <div>
-            {/**************************************** carousel aquagym ****************************************/}
+            {/**************************************** carousel natation ****************************************/}
             <div>
                 <div className='flex flex-col items-center bg-[#1073BC] w-full h-72 p-8'>
                 <Link href='/' className={`${yanoneKaffeesatzFont.className} absolute top-5 left-5 md:top-10 md:left-20 text-white text-xl`}>Accueil</Link>
                     <Image
-                        src="/logo_bleu_intermediaire.png"
+                        src="/elements_graphique/logo_bleu_intermediaire.png"
                         alt="Logo du Club des Mousses bleu intermadiaire"
                         width={150}
                         height={150}
@@ -194,7 +194,7 @@ export default function Natation() {
             {/**************************************** citation ****************************************/}
             <div className='flex flex-col md:flex-row md:justify-around w-full items-center'>
                 <Image
-                    src="/nageur_picto.svg"
+                    src="/elements_graphique/nageur_picto.svg"
                     alt="nageur"
                     width={250}
                     height={250}
@@ -202,14 +202,14 @@ export default function Natation() {
                 />
                 <h2 className={`${yanoneKaffeesatzFont.className} text-center text-xl text-[#1073BC] mt-16 mx-10 md:mt-0 ${isCitationVisible ? 'animate-scroll-up' : 'opacity-0'} `}>« Pour la sécurité de vos enfants ou petits enfants, venez prendre des cours de natation au Club des Mousses et apprenez à nager pour la vie ! »</h2>
                 <Image
-                    src="/drapeau_picto.svg"
+                    src="/elements_graphique/drapeau_picto.svg"
                     alt="drapeau"
                     width={250}
                     height={250}
                     className={`hidden md:block transition-transform duration-500 ease-in-out transform ${isCitationVisible ? 'translate-y-0 opacity-100' : 'translate-y-20 opacity-0'} `}
                 />
                 <Image
-                    src="/nageur_picto.svg"
+                    src="/elements_graphique/nageur_picto.svg"
                     alt="nageur"
                     width={250}
                     height={250}

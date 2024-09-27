@@ -1,3 +1,6 @@
+"use client";
+
+import { useEffect, useState } from 'react';
 import { Carousel, CarouselItem } from '@/app/components/petit_carousel';
 import { limelightFont, yanoneKaffeesatzFont } from '@/app/ui/font';
 import { Footer } from '@/app/ui/footer/footer';
@@ -7,67 +10,149 @@ import Link from 'next/link';
 const images = [
     "/club_carousel1.png",
     "/club_carousel2.png",
-    "/club_carousel3.png"
+    "/club/caroussel-pc1.jpeg",
+];
+// changer les images
+const mobileImages = [
+    "/club/telephone/caroussel-tel1.jpeg",
+    "/club/telephone/caroussel-tel2.jpeg",
+];
+
+// ajouter plus d'images pour le carousel - images d'enfant qui nagent
+const desktopImages = [
+    "/club/ordinateur/caroussel-pc1.jpeg",
+    "/club/ordinateur/caroussel-pc2.JPG",
+    "/club/ordinateur/caroussel-pc3.JPG",
+    "/club/ordinateur/caroussel-pc4.JPG",
+    "/club/ordinateur/caroussel-pc5.JPG",
 ];
 
 export default function Club() {
+    /*************** animation au scroll mobile ***************/
+    const [isCitationVisible, setIsCitationVisible] = useState(false);
+    const [isEmojiVisible, setIsEmojiVisible] = useState(false);
+    const [isDeroulementSeanceVisible, setIsDeroulementSeanceVisible] = useState(false);
+
+    useEffect(() => {
+        const handleScroll = () => {
+        const scrollY = window.scrollY;
+        const screenWidth = window.innerWidth;
+        console.log(scrollY);
+
+        if (scrollY > 100) {
+            setIsCitationVisible(true);
+        } else {
+            setIsCitationVisible(false);
+        }
+        if (screenWidth <= 768) {
+            if (scrollY > 250) {
+                setIsEmojiVisible(true);
+            } else {
+                setIsEmojiVisible(false);
+            }
+        } else if (screenWidth > 768) {
+            if (scrollY > 100) {
+                setIsEmojiVisible(true);
+            } else {
+                setIsEmojiVisible(false);
+            }
+        }
+        if (screenWidth <= 768) {
+            if (scrollY > 500) {
+                setIsDeroulementSeanceVisible(true);
+            } else {
+                setIsDeroulementSeanceVisible(false);
+            }
+        } else if (screenWidth > 768) {
+            if (scrollY > 400) {
+                setIsDeroulementSeanceVisible(true);
+            } else {
+                setIsDeroulementSeanceVisible(false);
+            }
+        }
+        
+        };
+
+        window.addEventListener('scroll', handleScroll);
+        return () => {
+        window.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
+
     return (
         <div>
             {/**************************************** carousel club ****************************************/}
             <div>
-                <div className='flex flex-col items-center bg-[#2F3092] w-full h-72 p-8'>
-                <Link href='/' className={`${yanoneKaffeesatzFont.className} absolute top-10 left-10 md:left-20 text-white text-xl`}>Accueil</Link>
+                <div className='flex flex-col items-center bg-[#1073BC] w-full h-72 p-8'>
+                <Link href='/' className={`${yanoneKaffeesatzFont.className} absolute top-5 left-5 md:top-10 md:left-20 text-white text-xl`}>Accueil</Link>
                     <Image
-                        src="/logo_bleu_fonce.png"
-                        alt="Logo du Club des Mousses bleu fonce"
+                        src="/elements_graphique/logo_bleu_intermediaire.png"
+                        alt="Logo du Club des Mousses bleu intermadiaire"
                         width={150}
                         height={150}
                     />
-                    <h1 className={`${limelightFont.className} text-white text-center text-xl md:text-4xl mt-6 mb-3`}>Le Club des Mousses</h1>
-                    <h2 className={`${yanoneKaffeesatzFont.className} text-white text-3xl`}>du lundi au samedi</h2>
+                    <h1 className={`${limelightFont.className} text-white text-2xl mt-6 mb-3 text-center md:text-4xl`}>Le Club des Mousses</h1>
+                    <h2 className={`${yanoneKaffeesatzFont.className} text-white text-xl md:text-3xl`}>du lundi au samedi</h2>
                 </div>
-                <Carousel>
-                    {images.map((src, index) => (
-                    <CarouselItem key={index}>
-                        <Image
-                            src={src}
-                            alt={`Image de l'aquagym`}
-                            layout="fill"
-                            objectFit='cover'
-                        />
-                    </CarouselItem>
-                    ))}
-                </Carousel>
+                <div className='hidden md:block'>
+                    <Carousel>
+                        {desktopImages.map((src, index) => (
+                        <CarouselItem key={index}>
+                            <Image
+                                src={src}
+                                alt={`Image club des mousses`}
+                                layout="fill"
+                                objectFit='cover'
+                            />
+                        </CarouselItem>
+                        ))}
+                    </Carousel>
+                </div>
+                <div className='block md:hidden'>
+                    <Carousel>
+                        {mobileImages.map((src, index) => (
+                        <CarouselItem key={index}>
+                            <Image
+                                src={src}
+                                alt={`Image club des mousses`}
+                                layout="fill"
+                                objectFit='cover'
+                            />
+                        </CarouselItem>
+                        ))}
+                    </Carousel>
+                </div>
             </div>
 
             {/**************************************** citation ****************************************/}
-            <div className='flex flex-col md:flex-row md:justify-around w-full items-center my-10 md:mt-5'>
+            <div className={`flex flex-col md:flex-row md:justify-around w-full items-center my-10 md:mt-5`}>
                 <Image
-                    src="/trompette.svg"
-                    alt="nageur"
+                    src="/elements_graphique/trompette.svg"
+                    alt="trompette"
                     width={250}
                     height={250}
-                    className='hidden md:block'
+                    className={`hidden md:block ${isCitationVisible ? 'animate-scroll-up' : 'opacity-0'} `}
                 />
-                <h2 className={`${yanoneKaffeesatzFont.className} text-center text-xl text-[#1073BC] mx-10`}>« En plus de se défouler toute la journée, le sport et les activités de groupes sont des occasions de lier des amitiés, qui durent parfois toute la vie ! »</h2>
+                <h2 className={`${yanoneKaffeesatzFont.className} text-center text-xl text-[#1073BC] mx-10 ${isCitationVisible ? 'animate-scroll-up' : 'opacity-0'} `}>« En plus de se défouler toute la journée, le sport et les activités de groupes sont des occasions de lier des amitiés, qui durent parfois toute la vie ! »</h2>
                 <Image
-                    src="/cabine.svg"
-                    alt="drapeau"
+                    src="/elements_graphique/cabine.svg"
+                    alt="cabine"
                     width={250}
                     height={250}
+                    className={`${isEmojiVisible ? 'animate-scroll-up' : 'opacity-0'} `}
                 />
             </div>
 
             <div className='flex flex-col items-center'>
                 {/**************************************** groupes d'age ****************************************/}
-                <div className={`${limelightFont.className} text-white text-xl md:text-4xl text-center md:rounded-club-des-mousses bg-[#2F3092] py-5 px-12 my-10`}>Differents groupes d&apos;age</div>
+                <div className={`${limelightFont.className} text-white text-xl md:text-4xl text-center md:rounded-club-des-mousses bg-[#2F3092] py-5 px-12 mb-12 w-full md:w-1/2 ${isDeroulementSeanceVisible ? 'animate-scroll-up' : 'opacity-0'} `}>Differents groupes d&apos;age</div>
                     <div className='hidden md:block'>
                         <div className='flex my-16'>
                             <div className='flex flex-col'>
                                 {/***************** Genius *****************/}
                                 <div className='flex items-center'>
                                     <Image
-                                        src="/genius.svg"
+                                        src="/elements_graphique/genius.svg"
                                         alt='genius'
                                         width={150}
                                         height={150}
@@ -79,7 +164,7 @@ export default function Club() {
                                 {/***************** Mickey *****************/}
                                 <div className='flex items-center'>
                                     <Image
-                                        src="/mickey.svg"
+                                        src="/elements_graphique/mickey.svg"
                                         alt='mickey'
                                         width={150}
                                         height={150}
@@ -90,7 +175,7 @@ export default function Club() {
                                 {/***************** Petit Loup *****************/}
                                 <div className='flex items-center'>
                                     <Image
-                                        src="/petit_loup.svg"
+                                        src="/elements_graphique/petit_loup.svg"
                                         alt='petit loup'
                                         width={150}
                                         height={150}
@@ -101,7 +186,7 @@ export default function Club() {
                                 {/***************** Winnie *****************/}
                                 <div className='flex items-center'>
                                     <Image
-                                        src="/winnie.svg"
+                                        src="/elements_graphique/winnie.svg"
                                         alt='winnie'
                                         width={150}
                                         height={150}
@@ -114,29 +199,29 @@ export default function Club() {
                             {/**************************************** photo club ****************************************/}
                             <div className='group mt-10'>
                                 <Image
-                                    src="/figurines.JPG"
-                                    alt="dance du club"
+                                    src="/club/figurines.JPG"
+                                    alt="figurines club des mousses"
                                     width={250}
                                     height={250}
                                     className="z-40 relative rounded-club-des-mousses -rotate-6 border-4 border-white transition-transform duration-500 ease-in-out transform origin-bottom-left group-hover:-rotate-12 group-hover:-translate-x-10 group-hover:-translate-y-10 group-hover:scale-110"
                                 />
                                 <Image
-                                    src="/spectacle.JPG"
-                                    alt="podium du club"
+                                    src="/club/spectacle.JPG"
+                                    alt="spectacle club des mousses"
                                     width={250}
                                     height={250}
                                     className="z-30 relative -top-16 left-1/3 rounded-club-des-mousses rotate-12 border-4 border-white transition-transform duration-500 ease-in-out origin-bottom-left group-hover:translate-x-16 group-hover:-translate-y-2 group-hover:rotate-6 group-hover:scale-110"
                                 />
                                 <Image
-                                    src="/anniversaire_club.JPG"
-                                    alt="podium du club"
+                                    src="/club/aniversaire-club1.JPG"
+                                    alt="anniversaire club des mousses"
                                     width={250}
                                     height={250}
                                     className="z-20 relative -top-32 rounded-club-des-mousses rotate-6 border-4 border-white transition-transform duration-500 ease-in-out origin-bottom-right group-hover:-translate-x-8 group-hover:translate-y-20 group-hover:-rotate-0 group-hover:scale-110"
                                 />
                                 <Image
-                                    src="/podium_theo.JPG"
-                                    alt="podium du club"
+                                    src="/club/podium_theo.JPG"
+                                    alt="podium du club theo"
                                     width={250}
                                     height={250}
                                     className="z-10 relative -top-48 left-1/3 rounded-club-des-mousses -rotate-12 border-4 border-white transition-transform duration-500 ease-in-out group-hover:translate-y-32 group-hover:translate-x-20 group-hover:scale-110"
@@ -150,7 +235,7 @@ export default function Club() {
                             <div className='flex items-center mx-10'>
                                 <h1 className={`${yanoneKaffeesatzFont.className} text-[#1AC1F3] text-xl`}>Genius <br /> 10 ans - 14 ans</h1>
                                 <Image
-                                    src="/genius.svg"
+                                    src="/elements_graphique/genius.svg"
                                     alt='winnie'
                                     width={150}
                                     height={150}
@@ -158,7 +243,7 @@ export default function Club() {
                             </div>
                             <div className='flex items-center mx-10'>
                                 <Image
-                                    src="/mickey.svg"
+                                    src="/elements_graphique/mickey.svg"
                                     alt='winnie'
                                     width={150}
                                     height={150}
@@ -168,7 +253,7 @@ export default function Club() {
                             <div className='flex items-center mx-10'>
                                 <h1 className={`${yanoneKaffeesatzFont.className} text-[#1AC1F3] text-xl`}>P&apos;tit-Loup <br /> 4 ans - 6 ans</h1>
                                 <Image
-                                    src="/petit_loup.svg"
+                                    src="/elements_graphique/petit_loup.svg"
                                     alt='winnie'
                                     width={150}
                                     height={150}
@@ -176,7 +261,7 @@ export default function Club() {
                             </div>
                             <div className='flex items-center mx-10'>
                                 <Image
-                                    src="/winnie.svg"
+                                    src="/elements_graphique/winnie.svg"
                                     alt='winnie'
                                     width={150}
                                     height={150}
@@ -187,29 +272,29 @@ export default function Club() {
                         {/**************************************** photo club ****************************************/}
                         <div className='mt-16'>
                             <Image
-                                src="/figurines.JPG"
-                                alt="dance du club"
+                                src="/club/figurines.JPG"
+                                alt="figurines club des mousses"
                                 width={200}
                                 height={200}
                                 className='z-40 relative top-5 left-4 rounded-club-des-mousses -rotate-6 border-4 border-white'
                             />
                             <Image
-                                src="/spectacle.JPG"
-                                alt="podium du club"
+                                src="/club/spectacle.JPG"
+                                alt="spectacle club des mousses"
                                 width={200}
                                 height={200}
                                 className='z-30 relative -top-10 left-1/3 rounded-club-des-mousses rotate-12 border-4 border-white'
                             />
                             <Image
-                                src="/anniversaire_club.JPG"
-                                alt="podium du club"
+                                src="/club/aniversaire-club1.JPG"
+                                alt="anniversaire club des mousses"
                                 width={200}
                                 height={200}
                                 className='z-20 relative -top-24 left-10 rounded-club-des-mousses rotate-3 border-4 border-white'
                             />
                             <Image
-                                src="/podium_theo.JPG"
-                                alt="podium du club"
+                                src="/club/podium_theo.JPG"
+                                alt="podium du club theo"
                                 width={200}
                                 height={200}
                                 className='z-10 relative -top-36 left-1/3 rounded-club-des-mousses -rotate-12 border-4 border-white'
@@ -300,7 +385,7 @@ export default function Club() {
                 {/**************************************** inscription ****************************************/}
                 <div className=''>
                     <Image
-                        src="/divider_vague_2.svg"
+                        src="/elements_graphique/divider_vague_2.svg"
                         alt="vague divider"
                         width={800}
                         height={150}
@@ -330,7 +415,7 @@ export default function Club() {
                         </div>
                     </div>
                     <Image
-                        src="/divider_vague_2.svg"
+                        src="/elements_graphique/divider_vague_2.svg"
                         alt="vague divider"
                         width={800}
                         height={150}

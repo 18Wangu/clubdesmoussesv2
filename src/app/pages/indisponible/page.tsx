@@ -3,6 +3,7 @@ import Link from 'next/link';
 
 export default function Indisponible() {
     return (
+        //mettre logo orange et ameliorer cette page
         <div className={`${yanoneKaffeesatzFont.className} text-[#EE7601] text-center h-full`}>
             <Link href='/' className={`${yanoneKaffeesatzFont.className} absolute top-10 left-20 text-xl`}>Accueil</Link>
             <h1 className="text-4xl my-32">Page Indiponible</h1>
