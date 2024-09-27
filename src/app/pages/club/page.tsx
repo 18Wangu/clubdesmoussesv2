@@ -7,18 +7,13 @@ import { Footer } from '@/app/ui/footer/footer';
 import Image from 'next/image';
 import Link from 'next/link';
 
-const images = [
-    "/club_carousel1.png",
-    "/club_carousel2.png",
-    "/club/caroussel-pc1.jpeg",
-];
-// changer les images
+
+// ajouter images
 const mobileImages = [
     "/club/telephone/caroussel-tel1.jpeg",
     "/club/telephone/caroussel-tel2.jpeg",
 ];
 
-// ajouter plus d'images pour le carousel - images d'enfant qui nagent
 const desktopImages = [
     "/club/ordinateur/caroussel-pc1.jpeg",
     "/club/ordinateur/caroussel-pc2.JPG",
@@ -32,6 +27,10 @@ export default function Club() {
     const [isCitationVisible, setIsCitationVisible] = useState(false);
     const [isEmojiVisible, setIsEmojiVisible] = useState(false);
     const [isDeroulementSeanceVisible, setIsDeroulementSeanceVisible] = useState(false);
+    const [isGeniusVisible, setIsGeniusVisible] = useState(false);
+    const [isMickeyVisible, setIsMickeyVisible] = useState(false);
+    const [isPtitLoupVisible, setIsPtitLoupVisible] = useState(false);
+    const [isWinnieVisible, setIsWinnieVisible] = useState(false);
 
     useEffect(() => {
         const handleScroll = () => {
@@ -70,7 +69,59 @@ export default function Club() {
                 setIsDeroulementSeanceVisible(false);
             }
         }
-        
+        if (screenWidth <= 768) {
+            if (scrollY > 700) {
+                setIsGeniusVisible(true);
+            } else {
+                setIsGeniusVisible(false);
+            }
+        } else if (screenWidth > 768) {
+            if (scrollY > 400) {
+                setIsGeniusVisible(true);
+            } else {
+                setIsGeniusVisible(false);
+            }
+        }
+        if (screenWidth <= 768) {
+            if (scrollY > 850) {
+                setIsMickeyVisible(true);
+            } else {
+                setIsMickeyVisible(false);
+            }
+        } else if (screenWidth > 768) {
+            if (scrollY > 400) {
+                setIsMickeyVisible(true);
+            } else {
+                setIsMickeyVisible(false);
+            }
+        }
+        if (screenWidth <= 768) {
+            if (scrollY > 1000) {
+                setIsPtitLoupVisible(true);
+            } else {
+                setIsPtitLoupVisible(false);
+            }
+        } else if (screenWidth > 768) {
+            if (scrollY > 400) {
+                setIsPtitLoupVisible(true);
+            } else {
+                setIsPtitLoupVisible(false);
+            }
+        }
+        if (screenWidth <= 768) {
+            if (scrollY > 1150) {
+                setIsWinnieVisible(true);
+            } else {
+                setIsWinnieVisible(false);
+            }
+        } else if (screenWidth > 768) {
+            if (scrollY > 400) {
+                setIsWinnieVisible(true);
+            } else {
+                setIsWinnieVisible(false);
+            }
+        }
+
         };
 
         window.addEventListener('scroll', handleScroll);
@@ -150,7 +201,7 @@ export default function Club() {
                         <div className='flex my-16'>
                             <div className='flex flex-col'>
                                 {/***************** Genius *****************/}
-                                <div className='flex items-center'>
+                                <div className={`flex items-center ${isGeniusVisible ? 'animate-scroll-up' : 'opacity-0'} `}>
                                     <Image
                                         src="/elements_graphique/genius.svg"
                                         alt='genius'
@@ -162,7 +213,7 @@ export default function Club() {
                                     <h3 className={`${yanoneKaffeesatzFont.className} mx-12 text-[#1AC1F3] text-xl`}>10 ans - 14 ans</h3>
                                 </div>
                                 {/***************** Mickey *****************/}
-                                <div className='flex items-center'>
+                                <div className={`flex items-center ${isMickeyVisible ? 'animate-scroll-up' : 'opacity-0'} `}>
                                     <Image
                                         src="/elements_graphique/mickey.svg"
                                         alt='mickey'
@@ -173,7 +224,7 @@ export default function Club() {
                                     <h3 className={`${yanoneKaffeesatzFont.className} mx-12 text-[#1AC1F3] text-xl`}>6 ans et demi - 9 ans</h3>
                                 </div>
                                 {/***************** Petit Loup *****************/}
-                                <div className='flex items-center'>
+                                <div className={`flex items-center ${isPtitLoupVisible ? 'animate-scroll-up' : 'opacity-0'} `}>
                                     <Image
                                         src="/elements_graphique/petit_loup.svg"
                                         alt='petit loup'
@@ -184,7 +235,7 @@ export default function Club() {
                                     <h3 className={`${yanoneKaffeesatzFont.className} mx-7 text-[#1AC1F3] text-xl`}>4 ans et demi - 6 ans</h3>
                                 </div>
                                 {/***************** Winnie *****************/}
-                                <div className='flex items-center'>
+                                <div className={`flex items-center ${isWinnieVisible ? 'animate-scroll-up' : 'opacity-0'} `}>
                                     <Image
                                         src="/elements_graphique/winnie.svg"
                                         alt='winnie'
@@ -232,7 +283,7 @@ export default function Club() {
                     {/**************************************** groupes d'age mobile ****************************************/}
                     <div className='block md:hidden'>
                         <div>
-                            <div className='flex items-center mx-10'>
+                            <div className={`flex items-center mx-10 ${isGeniusVisible ? 'animate-scroll-up' : 'opacity-0'} `}>
                                 <h1 className={`${yanoneKaffeesatzFont.className} text-[#1AC1F3] text-xl`}>Genius <br /> 10 ans - 14 ans</h1>
                                 <Image
                                     src="/elements_graphique/genius.svg"
@@ -241,7 +292,7 @@ export default function Club() {
                                     height={150}
                                 />
                             </div>
-                            <div className='flex items-center mx-10'>
+                            <div className={`flex items-center mx-10 ${isMickeyVisible ? 'animate-scroll-up' : 'opacity-0'} `}>
                                 <Image
                                     src="/elements_graphique/mickey.svg"
                                     alt='winnie'
@@ -250,7 +301,7 @@ export default function Club() {
                                 />
                                 <h1 className={`${yanoneKaffeesatzFont.className} text-[#1AC1F3] text-xl`}>Winnie <br /> 6 ans et demi - 9 ans</h1>
                             </div>
-                            <div className='flex items-center mx-10'>
+                            <div className={`flex items-center mx-10 ${isPtitLoupVisible ? 'animate-scroll-up' : 'opacity-0'} `}>
                                 <h1 className={`${yanoneKaffeesatzFont.className} text-[#1AC1F3] text-xl`}>P&apos;tit-Loup <br /> 4 ans - 6 ans</h1>
                                 <Image
                                     src="/elements_graphique/petit_loup.svg"
@@ -259,7 +310,7 @@ export default function Club() {
                                     height={150}
                                 />
                             </div>
-                            <div className='flex items-center mx-10'>
+                            <div className={`flex items-center mx-10 ${isWinnieVisible ? 'animate-scroll-up' : 'opacity-0'} `}>
                                 <Image
                                     src="/elements_graphique/winnie.svg"
                                     alt='winnie'
